@@ -38,10 +38,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-    'main': 'Utama',
+    'main': 'Main',
     'game': 'Game',
     'xp': 'Exp & Limit',
-    'sticker': 'Stiker',
+    'sticker': 'Sticker',
     'kerang': 'Kerang Ajaib',
     'quotes': 'Quotes',
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
@@ -57,7 +57,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'vote': 'Voting',
     'absen': 'Absen',
     'quran': 'Al Qur\'an',
-    'audio': 'Pengubah Suara',
+    'audio': 'Audio Changer',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
     '': 'Tanpa Kategori',
@@ -188,98 +188,98 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `${ucapan()}, ${name}`.trim(),
-          "description": "© stikerin",
-          "buttonText": "Klik Disini",
+          "title": `Ｉｔｓｕｋｉ　Ｂｏｔ　翁ウざ\n\nUcapan : ${ucapan()}, ${name}`.trim(),
+          "description": "(っ◔◡◔)っ ♥ Itsuki Bot ♥",
+          "buttonText": "CLICK HERE TODDD",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
-                  "title": `Semua Perintah`,
-                  "description": "",
+                  "title": `ALL MENU`,
+                  "description": "\n\nList All Menu",
                   "rowId": ".? all"
                 }, {
                   "title": "Game",
-                  "description": "",
+                  "description": "\n\nList Game Menu",
                   "rowId": ".? game"
 
                 }, {
                   "title": "XP",
-                  "description": "",
+                  "description": "\n\nList XP Menu",
                   "rowId": ".? xp"
 
                 }, {
-                  "title": "Stiker",
-                  "description": "",
+                  "title": "Sticker",
+                  "description": "\n\nList Sticker Menu",
                   "rowId": ".? stiker"
                 }, {
                   "title": "Kerang Ajaib",
-                  "description": "",
+                  "description": "\n\nList Kerang Ajaib",
                   "rowId": ".? kerangajaib"
                 }, {
                   "title": "Quotes",
-                  "description": "",
+                  "description": "\n\nQuotes bang",
                   "rowId": ".? quotes"
                 }, {
                   "title": "Admin",
-                  "description": "",
+                  "description": "\n\nAdmin Group Only",
                   "rowId": ".? admin"
                 }, {
                   "title": "Grup",
-                  "description": "",
+                  "description": "\n\nGroup Only",
                   "rowId": ".? grup"
                 }, {
                   "title": "Premium",
-                  "description": "",
+                  "description": "\n\nNot Accessible",
                   "rowId": ".? premium"
                 }, {
                   "title": "Internet",
-                  "description": "",
+                  "description": "\n\nList Internet Menu",
                   "rowId": ".? internet"
                 }, {
                   "title": "Anonymous",
-                  "description": "",
+                  "description": "\n\nAnonymous Chat",
                   "rowId": ".? anonymous"
                 }, {
                   "title": "Nulis & Logo",
-                  "description": "",
+                  "description": "\n\nNulis disini bang:v",
                   "rowId": ".? nulis"
                 }, {
                   "title": "Downloader",
-                  "description": "",
+                  "description": "\n\nList Downloader Menu",
                   "rowId": ".? downloader"
                 }, {
                   "title": "Tools",
-                  "description": "",
+                  "description": "\n\nTools Menu",
                   "rowId": ".? tools"
                 }, {
                   "title": "Fun",
-                  "description": "",
+                  "description": "\n\nFun Menu",
                   "rowId": ".? fun"
                 }, {
                   "title": "Database",
-                  "description": "",
+                  "description": "\n\nAlias of storage",
                   "rowId": ".? database"
                 }, {
                   "title": "Vote & Absen",
-                  "description": "",
+                  "description": "\n\nlupa:v",
                   "rowId": ".? vote"
                 }, {
                   "title": "Al-Qur\'an",
-                  "description": "",
+                  "description": "\n\nSentiasa tobat bang:v",
                   "rowId": ".? quran"
                 }, {
-                  "title": "Pengubah Suara",
-                  "description": "",
+                  "title": "Audio Changer",
+                  "description": "\n\nHmm",
                   "rowId": ".? audio"
                 }, {
-                  "title": "Jadi Bot",
-                  "description": "",
+                  "title": "JadiBot",
+                  "description": "\n\nBiar lo jadibot:v",
                   "rowId": ".? jadibot"
                 }, {
                   "title": "Info",
-                  "description": "",
+                  "description": "\n\nInfo",
                   "rowId": ".? info"
                 }, {
                   "title": "Tanpa Kategori",
@@ -287,7 +287,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "rowId": ".? tanpakategori"
                 }, {
                   "title": "Owner",
-                  "description": "",
+                  "description": "\n\nONLY OWNER",
                   "rowId": ".? owner"
                 }
               ]
@@ -377,7 +377,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'made with ❤️ by ariffb', 'Pemilik Bot', '.owner', 'Donasi', '.donasi', m)
+    await conn.send3ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'Ｃｒｅａｔｅｄ Ｗｉｔｈ ❤️ ｂｙ Ｉｔｓｕｋｉ', 'Pemilik Bot', '.owner', 'Donasi', '.donasi', 'Back To Menu', '.?', m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -411,18 +411,18 @@ function clockString(ms) {
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "Selamat dinihari"
+  res = "Good morning"
   if (time >= 4) {
-    res = "Selamat pagi"
+    res = "Good morning"
   }
-  if (time > 10) {
-    res = "Selamat siang"
+  if (time >= 12) {
+    res = "Good afternoon"
   }
   if (time >= 15) {
-    res = "Selamat sore"
+    res = "Good afternoon"
   }
   if (time >= 18) {
-    res = "Selamat malam"
+    res = "Good night"
   }
   return res
 }
