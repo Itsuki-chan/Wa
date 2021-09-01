@@ -1,4 +1,4 @@
-let levelling = require('../lib/levelling')
+﻿let levelling = require('../lib/levelling')
 let { MessageType } = require('@adiwajshing/baileys')
 let fs = require('fs')
 let path = require('path')
@@ -6,27 +6,22 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-┌─〔 %me 〕
-├ Hai, %name!
-│
-├ Tersisa *%limit Limit*
-├ Role *%role*
-├ Level *%level (%exp / %maxexp)* [%xp4levelup]
-├ %totalexp XP secara Total
-│ 
-├ Tanggal: *%week %weton, %date*
-├ Tanggal Islam: *%dateIslamic*
-├ Waktu: *%time*
-│
-├ Uptime: *%uptime (%muptime)*
-├ Database: %rtotalreg dari %totalreg
-├ Github:
-├ %github
-└────
-%readmore`.trimStart(),
-  header: '┌─〔 %category 〕',
-  body: '├ %cmd %islimit %isPremium',
-  footer: '└────\n',
+Bot Name : %me
+Name : %name
+Owner : wa.me/60199782326
+Uptime : %uptime
+Limit : %limit
+Prefix : Multi
+Xp : %exp
+Users : %totalreg
+Role : %role
+Jam : %time
+Date : %date
+Day : %week
+`.trimStart(),
+  header: '❑「 ```%category``` 」',
+  body: '▷ %cmd %islimit %isPremium',
+  footer: '\n',
   after: `
 *%npmname@^%version*
 ${'```%npmdesc```'}
@@ -135,6 +130,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
 
   try {
+    await conn.fakeReply(m.chat, `
+[❗] *L O A D I N G . . .*
+    *READING* _menu.js_
+`, '0@s.whatsapp.net', `${ucapan()} , ${conn.getName(m.sender)}`, 'status@broadcast')
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
@@ -190,7 +189,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         "listMessage": {
           "title": `Ｉｔｓｕｋｉ　Ｂｏｔ　翁ウざ\n\nUcapan : ${ucapan()}, ${name}`.trim(),
           "description": "(っ◔◡◔)っ ♥ Itsuki Bot ♥",
-          "buttonText": "CLICK HERE TODDD",
+          "buttonText": "CLICK HERE BANG",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
@@ -286,6 +285,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "",
                   "rowId": ".? tanpakategori"
                 }, {
+                  "title": "Uptime Bot",
+                  "description": `\n${uptime}`,
+                  "rowId": "game"
+                }, {
                   "title": "Owner",
                   "description": "\n\nONLY OWNER",
                   "rowId": ".? owner"
@@ -377,7 +380,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), text.trim(), 'Ｃｒｅａｔｅｄ Ｗｉｔｈ ❤️ ｂｙ Ｉｔｓｕｋｉ', 'Pemilik Bot', '.owner', 'Donasi', '.donasi', 'Back To Menu', '.?', m)
+    await conn.send3ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), `Yo, ${name}
+${ucapan()}`, text.trim(), 'Pemilik Bot', '.owner', 'Donasi', '.donasi', 'Back To Menu', '.?', m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -411,18 +415,18 @@ function clockString(ms) {
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "Good morning"
+  res = "Good morning 🌄"
   if (time >= 4) {
-    res = "Good morning"
+    res = "Good morning 🌄"
   }
   if (time >= 12) {
-    res = "Good afternoon"
+    res = "Good afternoon 🏜️"
   }
   if (time >= 15) {
-    res = "Good afternoon"
+    res = "Good afternoon 🌅"
   }
   if (time >= 18) {
-    res = "Good night"
+    res = "Good night 🌃"
   }
   return res
 }

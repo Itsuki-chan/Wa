@@ -1,5 +1,5 @@
-let fs = require('fs')
-global.owner = ['6283128734012'] // Letakan nomor kamu disini
+﻿let fs = require('fs')
+global.owner = ['60199782326'] // Letakan nomor kamu disini
 global.mods = [] // Moderator?
 global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna premium tidak memerlukan limit
 global.APIs = { // API Prefix
@@ -29,7 +29,7 @@ global.APIKeys = { // APIKey nya disini
 
 // Sticker WM
 global.packname = '❤️'
-global.author = 'ariffb'
+global.author = 'Itsuki Chan'
 
 global.wait = '_*tunggu..*_'
 global.eror = '_*Server Error*_'
