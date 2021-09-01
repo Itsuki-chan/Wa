@@ -1,16 +1,15 @@
-console.log('Memulai...')
 let { spawn } = require('child_process')
 let path = require('path')
 let fs = require('fs')
 let package = require('./package.json')
 const CFonts = require('cfonts')
-CFonts.say('Stikerin Bot', {
-  colors: ['#f2aa4c'],
+CFonts.say('Itsuki Bot', {
+  colors: ['red'],
   font: 'block',
   align: 'center',
 })
-CFonts.say(`'${package.name}' Oleh @${package.author.name || package.author}`, {
-  colors: ['#f2aa4c'],
+CFonts.say(`Created By Adiixyz`, {
+  colors: ['green'],
   font: 'console',
   align: 'center',
 })
