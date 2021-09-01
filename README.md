@@ -11,6 +11,7 @@
 #### Heroku Buildpack
 | BuildPack | LINK |
 |--------|--------|
+| **heroku/nodejs** ||
 | **FFMPEG** |[nih](https://github.com/jonathanong/heroku-buildpack-ffmpeg-latest) |
 | **IMAGEMAGICK** | [nih](https://github.com/DuckyTeam/heroku-buildpack-imagemagick) |
 
