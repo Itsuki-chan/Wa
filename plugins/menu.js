@@ -5,9 +5,8 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
-  before: `
-Bot Name : %me
-Name : %name
+  before: `Bot Name : %me
+Your Name : %name
 Owner : wa.me/60199782326
 Uptime : %uptime
 Limit : %limit
@@ -20,7 +19,7 @@ Date : %date
 Day : %week
 `.trimStart(),
   header: '❑「 ```%category``` 」',
-  body: '▷ %cmd %islimit %isPremium',
+  body: '▷ %cmd %islimit ',
   footer: '\n',
   after: `
 *%npmname@^%version*
@@ -187,9 +186,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `Ｉｔｓｕｋｉ　Ｂｏｔ　翁ウざ\n\nUcapan : ${ucapan()}, ${name}`.trim(),
+          "title": `Ｉｔｓｕｋｉ　Ｂｏｔ　翁ウざ\n\nUptime : ${uptime}\nUcapan : ${ucapan()}, ${name}`.trim(),
           "description": "(っ◔◡◔)っ ♥ Itsuki Bot ♥",
-          "buttonText": "CLICK HERE BANG",
+          "buttonText": "CLICK HERE~~",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
@@ -287,7 +286,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                 }, {
                   "title": "Uptime Bot",
                   "description": `\n${uptime}`,
-                  "rowId": "game"
+                  "rowId": "gase"
                 }, {
                   "title": "Owner",
                   "description": "\n\nONLY OWNER",
@@ -381,7 +380,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     await conn.send3ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), `Yo, ${name}
-${ucapan()}`, text.trim(), 'Pemilik Bot', '.owner', 'Donasi', '.donasi', 'Back To Menu', '.?', m)
+${ucapan()}`, text.trim(), 'Owner', '.owner', 'Donasi', '.donasi', 'Back To Menu', '.gabut', m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -389,7 +388,7 @@ ${ucapan()}`, text.trim(), 'Pemilik Bot', '.owner', 'Donasi', '.donasi', 'Back T
 }
 handler.help = ['menu', 'help', '?']
 handler.tags = ['main']
-handler.command = /^(menu|help|\?)$/i
+handler.command = /^(menu|help|\?|gabut)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
