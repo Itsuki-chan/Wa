@@ -38,6 +38,9 @@ src="https://img.shields.io/badge/itsukichan-red?colorA=%23ff0000&colorB=%23017e
 > npm i
 ```
 
+# rid dis
+[hmm](https://github.com/Itsuki-chan/Wa/pull/1)
+
 # THANKS lord
 * [`Baileys`](https://github.com/adiwajshing/Baileys)
 * [`ariffb`](https://github.com/ariffb25)
