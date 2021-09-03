@@ -30,8 +30,7 @@ src="https://img.shields.io/badge/itsukichan-red?colorA=%23ff0000&colorB=%23017e
 
 * Unduh & Instal Git [`Klik Disini`](https://git-scm.com/downloads)
 * Unduh & Instal NodeJS [`Klik Disini`](https://nodejs.org/en/download)
-* Unduh & Instal FFmpeg [`Klik Disini`](https://ffmpeg.org/download.html) (**Jangan Lupa Tambahkan FFmpeg ke variabel lingkungan PATH**)
-* Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php)
+* Unduh & Instal ImageMagick [`Klik Disini`](https://imagemagick.org/script/download.php) (**Jangan Lupa Add FFMPEG**)
 
 ```cmd
 > git clone https://github.com/Itsuki-chan/Wa.git
