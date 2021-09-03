@@ -4,7 +4,7 @@ let handler = async (m, { conn, participants, command }) => {
     if (/ku/i.test(command)) orang = m.sender
     else orang = member[Math.floor(Math.random() * member.length)]
     let jodoh = member[Math.floor(Math.random() * member.length)]
-    let jawab = `@${orang.replace(/@.+/, '')} ❤️ @${jodoh.replace(/@.+/, '')}`.trim()
+    let jawab = `Ciee.. Dia Lagi Jadian... @${orang.replace(/@.+/, '')} ❤️ @${jodoh.replace(/@.+/, '')}\n\nMinta PE Bang:v`.trim()
     let mentionedJid = [orang, jodoh]
     conn.reply(m.chat, jawab, m, { contextInfo: { mentionedJid } })
 }
