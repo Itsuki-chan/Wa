@@ -5,6 +5,9 @@
 <a href="https://github.com/Itsuki-chan"><img title="CREATED" src="https://img.shields.io/badge/Created-Itsuki-black?style=for-the-badge&logo=github"></a>
 </p>
 
+### Tutorial install?
+Tunggu tutorialnya di upload ke youtube
+
 #### Deploy to Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
@@ -37,9 +40,6 @@ src="https://img.shields.io/badge/itsukichan-red?colorA=%23ff0000&colorB=%23017e
 > cd Wa
 > npm i
 ```
-
-# rid dis
-[hmm](https://github.com/Itsuki-chan/Wa/pull/1)
 
 # THANKS lord
 * [`Baileys`](https://github.com/adiwajshing/Baileys)
