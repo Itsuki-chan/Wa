@@ -1,3 +1,5 @@
+**Bot ini dalam tahap pengembangan**
+
 <p align="center">
 	<img src="https://telegra.ph/file/005c5ee842de1a4fbaeae.jpg" width="100%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
