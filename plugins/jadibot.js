@@ -71,13 +71,11 @@ let handler = async (m, { conn, args, usedPrefix, command, isOwner }) => {
       }, 30000)
     })
     global.conns.push(conn)
-  } else throw 'Can't Jadibot in Jadibot\n\nChat : https://wa.me/' + global.conn.user.jid.split`@`[0] + '?text=#jadibot'
+  } else throw 'Can not Jadibot in Jadibot\n\nChat : https://wa.me/' + global.conn.user.jid.split`@`[0] + '?text=#jadibot'
 }
 handler.help = ['jadibot']
 handler.tags = ['jadibot']
 
 handler.command = /^jadibot$/i
-
-handler.limit = true
 
 module.exports = handler
