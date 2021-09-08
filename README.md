@@ -121,7 +121,7 @@ conn.logger.level = 'debug'
 
 ---------
 
- [![ariffb](https://github.com/Nurutomo.png?size=100)](https://github.com/ariffb25) | [![Adiixyz](https://github.com/Adiixyz.png?size=100)](https://github.com/Adiixyz)
+ [![ariffb](https://github.com/ariffb25.png?size=100)](https://github.com/ariffb25) | [![Adiixyz](https://github.com/Adiixyz.png?size=100)](https://github.com/Adiixyz)
 ----|----
 [ariffb](https://github.com/ariffb25) | [Adiixyz](https://github.com/Adiixyz)
  Author / Creator | Rewriter
