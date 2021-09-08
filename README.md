@@ -66,10 +66,10 @@ Used for [heroku](https://heroku.com/) or scan through the website
 ### `--db <json-server-url>`
 
 Use external db instead of local db, 
-Example Server `https://json-server.nurutomo.repl.co/`
-Code: [Code](https://repl.it/@Nurutomo/json-server)
+Example Server `https://json-server.adiixyz.repl.co/`
+* Code: [Code](https://repl.it/@Nurutomo/json-server)
 
-`node . --db 'https://json-server.nurutomo.repl.co/'`
+`node . --db 'https://json-server.adiixyz.repl.co/'`
 
 The server must have specifications like this
 
