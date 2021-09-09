@@ -7,7 +7,7 @@ let moment = require('moment-timezone')
 const defaultMenu = {
   before: `Bot Name : %me
 Your Name : %name
-Owner : wa.me/60199782326
+Owner : wa.me/${global.owner[0]}
 Uptime : %uptime
 Limit : %limit
 Prefix : Multi
@@ -21,10 +21,7 @@ Day : %week
   header: '❑「 ```%category``` 」',
   body: '▷ %cmd %islimit ',
   footer: '\n',
-  after: `
-*%npmname@^%version*
-${'```%npmdesc```'}
-`,
+  after: `who is this`,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
@@ -123,16 +120,13 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'owner') tags = {
     'owner': 'Owner',
     'host': 'Host',
-    'advanced': 'Advanced'
+    'advanced': 'Eval'
   }
 
 
 
   try {
-    await conn.fakeReply(m.chat, `
-[❗] *L O A D I N G . . .*
-    *READING* _menu.js_
-`, '0@s.whatsapp.net', `${ucapan()} , ${conn.getName(m.sender)}`, 'status@broadcast')
+    await conn.fakeReply(m.chat, '[❗] *Tunggu menu itsuki sedang diproses*', '0@s.whatsapp.net', `${ucapan()} , ${conn.getName(m.sender)}`, 'status@broadcast')
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
@@ -186,109 +180,101 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `Ｉｔｓｕｋｉ　Ｂｏｔ　翁ウざ\n\nUptime : ${uptime}\nUcapan : ${ucapan()}, ${name}`.trim(),
-          "description": "(っ◔◡◔)っ ♥ Itsuki Bot ♥",
-          "buttonText": "CLICK HERE~~",
+          "title": `*ITSUKI BOT*\n\nUptime : ${uptime}\nName : ${name}`.trim(),
+          "description": "Prefix : Multi",
+          "buttonText": "Click here >_<",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
-                  "title": `ALL MENU`,
+                  "title": `All Menu`,
                   "description": "\n\nList All Menu",
                   "rowId": ".? all"
                 }, {
-                  "title": "Game",
+                  "title": "Game Menu",
                   "description": "\n\nList Game Menu",
                   "rowId": ".? game"
 
                 }, {
-                  "title": "XP",
+                  "title": "Exp Menu",
                   "description": "\n\nList XP Menu",
                   "rowId": ".? xp"
 
                 }, {
-                  "title": "Sticker",
+                  "title": "Sticker Menu",
                   "description": "\n\nList Sticker Menu",
                   "rowId": ".? stiker"
                 }, {
-                  "title": "Kerang Ajaib",
+                  "title": "Kerang Ajaib Menu",
                   "description": "\n\nList Kerang Ajaib",
                   "rowId": ".? kerangajaib"
                 }, {
-                  "title": "Quotes",
+                  "title": "Quotes Menu",
                   "description": "\n\nQuotes bang",
                   "rowId": ".? quotes"
                 }, {
-                  "title": "Admin",
+                  "title": "Admin Menu",
                   "description": "\n\nAdmin Group Only",
                   "rowId": ".? admin"
                 }, {
-                  "title": "Grup",
+                  "title": "Group Menu",
                   "description": "\n\nGroup Only",
                   "rowId": ".? grup"
                 }, {
-                  "title": "Premium",
-                  "description": "\n\nNot Accessible",
-                  "rowId": ".? premium"
-                }, {
-                  "title": "Internet",
+                  "title": "Internet Menu",
                   "description": "\n\nList Internet Menu",
                   "rowId": ".? internet"
                 }, {
-                  "title": "Anonymous",
+                  "title": "Anonymous Chat Menu",
                   "description": "\n\nAnonymous Chat",
                   "rowId": ".? anonymous"
                 }, {
-                  "title": "Nulis & Logo",
+                  "title": "Nulis & Logo Menu",
                   "description": "\n\nNulis disini bang:v",
                   "rowId": ".? nulis"
                 }, {
-                  "title": "Downloader",
+                  "title": "Downloader Menu",
                   "description": "\n\nList Downloader Menu",
                   "rowId": ".? downloader"
                 }, {
-                  "title": "Tools",
+                  "title": "Tools Menu",
                   "description": "\n\nTools Menu",
                   "rowId": ".? tools"
                 }, {
-                  "title": "Fun",
+                  "title": "For Fun Menu",
                   "description": "\n\nFun Menu",
                   "rowId": ".? fun"
                 }, {
-                  "title": "Database",
+                  "title": "Database Menu",
                   "description": "\n\nAlias of storage",
                   "rowId": ".? database"
                 }, {
-                  "title": "Vote & Absen",
+                  "title": "Vote & Absen Menu",
                   "description": "\n\nlupa:v",
                   "rowId": ".? vote"
                 }, {
-                  "title": "Al-Qur\'an",
+                  "title": "Al-Qur\'an Menu",
                   "description": "\n\nSentiasa tobat bang:v",
                   "rowId": ".? quran"
                 }, {
-                  "title": "Audio Changer",
-                  "description": "\n\nHmm",
+                  "title": "Audio Changer Menu",
+                  "description": "\n\nChange your audio style:v",
                   "rowId": ".? audio"
                 }, {
-                  "title": "JadiBot",
+                  "title": "Baileys Menu",
                   "description": "\n\nBiar lo jadibot:v",
                   "rowId": ".? jadibot"
                 }, {
-                  "title": "Info",
+                  "title": "Info Menu",
                   "description": "\n\nInfo",
                   "rowId": ".? info"
                 }, {
-                  "title": "Tanpa Kategori",
+                  "title": "No Category Menu",
                   "description": "",
                   "rowId": ".? tanpakategori"
                 }, {
-                  "title": "Uptime Bot",
-                  "description": `\n${uptime}`,
-                  "rowId": "gase"
-                }, {
-                  "title": "Owner",
+                  "title": "Owner Menu",
                   "description": "\n\nONLY OWNER",
                   "rowId": ".? owner"
                 }
@@ -379,8 +365,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(fla + teks)).buffer(), `Yo, ${name}
-${ucapan()}`, text.trim(), 'Owner', '.owner', 'Donasi', '.donasi', 'Back To Menu', '.gabut', m)
+    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `Yo, ${name}
+${ucapan()}`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', 'Back To Menu', '.gabut', m)
   } catch (e) {
     conn.reply(m.chat, 'Maaf, menu sedang error', m)
     throw e
@@ -410,7 +396,7 @@ function clockString(ms) {
   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
+  return [h, m, s].map(v => v.toString().padStart(2, 0)).join('.')
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
