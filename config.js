@@ -28,12 +28,13 @@ global.APIKeys = { // APIKey nya disini
 }
 
 // Sticker WM
-global.packname = '❤️'
+global.packname = 'Hello'
 global.author = 'Itsuki Chan'
 
-global.wait = '_*tunggu..*_'
-global.eror = '_*Server Error*_'
+global.wait = '*Tunggu permintaan anda sedang diproses*'
+global.eror = '*Error.*'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text='
+global.back = 'https://telegra.ph/file/8c2d9c21a44f370807a9c.jpg'
 
 global.multiplier = 69 // Semakin tinggi, semakin sulit naik level
 
