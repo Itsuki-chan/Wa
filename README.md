@@ -27,6 +27,9 @@
 * Install [`Ffmpeg`](https://ffmpeg.org/download.html) (**Don't Forget to Add FFmpeg to the PATH environment variable**)
 * Install [`ImageMagick`](https://imagemagick.org/script/download.php)
 
+### WARNING... DONT FORGET TO DELETE `session.data.json`
+### IF YOU DON'T DELETE. THE QR NOT SHOWED
+
 ```cmd
 git clone https://github.com/Itsuki-chan/Wa
 cd Wa
