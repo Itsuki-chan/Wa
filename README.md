@@ -38,6 +38,11 @@ npm update
 node .
 ```
 
+# change something
+* Edit owner in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L2)
+* Edit apikey in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L19)
+* Edit packname in this [section]+https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L31)
+
 ---------
 
 ## For Heroku Users
