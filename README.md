@@ -45,6 +45,10 @@ node .
 * Edit author in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L32)
 
 # Edit Background in Menu
+Example :
+![bang](./Screenshot_2021-09-10-20-34-32-90.png)
+
+* You can edit in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L37)
 
 ---------
 
