@@ -18,7 +18,7 @@ Jam : %time
 Date : %date
 Day : %week
 `.trimStart(),
-  header: '❑「 ```%category``` 」',
+  header: '⋮☰「 ```%category``` 」',
   body: '▷ %cmd %islimit ',
   footer: '\n',
   after: `who is this`,
@@ -365,10 +365,13 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `Yo, ${name}
-${ucapan()}`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', 'Back To Menu', '.gabut', m)
+    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 ITSUKI BOT 」
+
+Yo, ${name}
+${ucapan()}
+⋮☰ LIST MENU`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', '⋮☰ BACK TO MENU', '.gabut', m)
   } catch (e) {
-    conn.reply(m.chat, 'Maaf, menu sedang error', m)
+    conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', 'zowner', m)
     throw e
   }
 }
