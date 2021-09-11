@@ -1,10 +1,10 @@
 {
-  "name": "ItsukiBot",
+  "name": "ITSUKI-BOT",
   "version": "1.1.2",
-  "description": "WhatsApp Doang",
-  "main": "index.js",
+  "description": "I AM ITSUKI",
+  "main": "itsuki.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "node itsuki.js",
     "test": "node test.js"
   },
   "repository": {
@@ -14,7 +14,7 @@
   "keywords": [
     "whatsapp-bot"
   ],
-  "author": "Ariffb",
+  "author": "Itsuki",
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Itsuki-chan/Wa/issues"
