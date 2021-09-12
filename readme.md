@@ -1,5 +1,5 @@
 <p align="center">
-	<img src="https://a.uguu.se/dpedLJXD.jpeg" width="92%" style="margin-left: auto;margin-right: auto;display: block;">
+	<img src="https://a.uguu.se/dpedLJXD.jpeg" width="45%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
 <h1 align="center">Itsuki Bot</h1>
 
