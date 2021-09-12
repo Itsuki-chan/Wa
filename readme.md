@@ -18,9 +18,12 @@
 
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
-[![Run on Repl.It](https://repl.it/badge/github/Itsuki-chan/Wa)](https://repl.it/github/Itsuki-chan/Wa)
+### *Note: repl it doesn't support this source code.*
+#### Steno (also known LowDB) need Latest version of NODEJS.
+#### And Nodejs version in repl it is v12
 
-[![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/48699555525)
+## You can `.jadibot` in this number
+[![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/17624757650)
 
 ## For Rdp/Windows/Vps Users
 
@@ -28,9 +31,6 @@
 * Install [`NodeJS`](https://nodejs.org/en/download)
 * Install [`Ffmpeg`](https://ffmpeg.org/download.html) (**Don't Forget to Add FFmpeg to the PATH environment variable**)
 * Install [`ImageMagick`](https://imagemagick.org/script/download.php)
-
-### WARNING... DONT FORGET TO DELETE `session.data.json`
-### IF YOU DON'T DELETE. THE QR NOT SHOWED
 
 ```cmd
 git clone https://github.com/Itsuki-chan/Wa
@@ -40,7 +40,7 @@ npm update
 node .
 ```
 
-# change something
+# if you want edit
 * Edit owner in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L2)
 * Edit apikey in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L19)
 * Edit packname in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L31)
