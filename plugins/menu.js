@@ -11,7 +11,7 @@ Uptime : %uptime
 Xp : %exp
 Users : %totalreg
 Role : %role
-Jam : %time WITA
+Time : %time WITA
 Date : %date
 Day : %week
 `.trimStart(),
@@ -23,7 +23,7 @@ Day : %week
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'stiker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Main',
@@ -177,7 +177,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `*ITSUKI BOT*\n\nUptime : ${uptime}\nName : ${name}`.trim(),
+          "title": `**ITSUKI BOT**\n\nUptime : ${uptime}\nName : ${name}`.trim(),
           "description": "Prefix : Multi",
           "buttonText": "Click here >_<",
           "listType": "SINGLE_SELECT",
@@ -366,9 +366,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', '⋮☰ BACK TO MENU', '.gabut', m)
+    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', '⋮☰ BACK TO MENU', '.gabut', { quoted: m })
   } catch (e) {
-    conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', 'zowner', m)
+    conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', 'zowner', { quoted: m })
     throw e
   }
 }
