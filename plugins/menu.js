@@ -7,7 +7,8 @@ let moment = require('moment-timezone')
 const defaultMenu = {
   before: `Bot Name : %me
 Your Name : %name
-Owner : wa.me/${global.owner[0]}
+Owner : wa.me/60199782326
+Owner 2 : wa.me/17624757650
 Uptime : %uptime
 Limit : %limit
 Prefix : Multi
@@ -275,8 +276,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "rowId": ".? tanpakategori"
                 }, {
                   "title": "Owner Menu",
-                  "description": "\n\nONLY OWNER",
+                  "description": "\n\nList Owner Menu",
                   "rowId": ".? owner"
+                }, {
+                  "title": "Japanese Menu",
+                  "description": "\n\nTranslated Menu",
+                  "rowId": ".japanesemenu"
                 }
               ]
             }
