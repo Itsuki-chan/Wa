@@ -42,7 +42,8 @@ global.db = new Low(
 global.DATABASE = global.db // Backwards Compatibility
 
 global.conn = new WAConnection()
-let authFile = `${opts._[0] || 'session'}.data.json`
+conn.browserDescription = ["Itsuki-Bot", "Firefox", '10.0']
+let authFile = `${opts._[0] || 'itsuki'}.json`
 if (fs.existsSync(authFile)) conn.loadAuthInfo(authFile)
 if (opts['trace']) conn.logger.level = 'trace'
 if (opts['debug']) conn.logger.level = 'debug'
@@ -125,8 +126,8 @@ global.reloadHandler = function () {
     conn.off('group-update', conn.onGroupUpdate)
     conn.off('CB:action,,call', conn.onCall)
   }
-  conn.welcome = 'Hai, @user!\nSelamat datang di grup @subject\n\n@desc'
-  conn.bye = '@user keluar'
+  conn.welcome = '@user joins @subject'
+  conn.bye = 'sayonara, @user'
   conn.spromote = '@user sekarang admin'
   conn.sdemote = '@user sekarang bukan admin'
   conn.handler = handler.handler
