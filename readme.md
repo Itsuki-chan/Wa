@@ -19,8 +19,8 @@
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
 ### *Note: repl it doesn't support this source code.*
-> Steno (also known LowDB) need Latest version of NODEJS.
-> And Nodejs version in repl it is v12
+> Steno (also known LowDB) need Latest version of Nodejs. Version of nodejs in |Repl It| is v12
+
 
 ## You can `.jadibot` in this number
 [![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/17624757650)
