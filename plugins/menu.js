@@ -5,24 +5,20 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
-  before: `Bot Name : %me
-Your Name : %name
-Owner : wa.me/60199782326
-Owner 2 : wa.me/17624757650
+  before: `Lib : Baileys
+Name : %name
 Uptime : %uptime
-Limit : %limit
-Prefix : Multi
 Xp : %exp
 Users : %totalreg
 Role : %role
-Jam : %time
+Jam : %time WITA
 Date : %date
 Day : %week
 `.trimStart(),
-  header: '⋮☰「 ```%category``` 」',
+  header: '「 %category 」',
   body: '▷ %cmd %islimit ',
   footer: '\n',
-  after: `who is this`,
+  after: `Created by Itsuki`,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
@@ -60,7 +56,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   if (teks == 'xp') tags = {
     'xp': 'Exp & Limit'
   }
-  if (teks == 'stiker') tags = {
+  if (teks == 'sticker') tags = {
     'sticker': 'Stiker'
   }
   if (teks == 'kerangajaib') tags = {
@@ -127,7 +123,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
 
   try {
-    await conn.fakeReply(m.chat, '[❗] *Tunggu menu itsuki sedang diproses*', '0@s.whatsapp.net', `${ucapan()} , ${conn.getName(m.sender)}`, 'status@broadcast')
+    await conn.fakeReply(m.chat, `[❗] *Tunggu menu ${teks} sedang diproses*`, '0@s.whatsapp.net', `${conn.getName(m.sender)} uses ${p}menu`, 'status@broadcast')
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
@@ -205,7 +201,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                 }, {
                   "title": "Sticker Menu",
                   "description": "\n\nList Sticker Menu",
-                  "rowId": ".? stiker"
+                  "rowId": ".? sticker"
                 }, {
                   "title": "Kerang Ajaib Menu",
                   "description": "\n\nList Kerang Ajaib",
@@ -294,7 +290,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       }, {}), { waitForAck: true })
     }
     // gunakan ini jika kamu menggunakan whatsapp bisnis
-    //   throw `
+    //   conn.fakeReply(m.chat, `
     // ┌〔 DAFTAR MENU 〕
     // ├ ${_p + command} all
     // ├ ${_p + command} game
@@ -320,7 +316,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     // ├ ${_p + command} tanpa kategori
     // ├ ${_p + command} owner
     // └────  
-    //     `.trim()
+    //     `.trim(), '0@s.whatsapp.net', 'Menu', 'status@broadcast')
     let groups = {}
     for (let tag in tags) {
       groups[tag] = []
@@ -370,11 +366,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 ITSUKI BOT 」
-
-Yo, ${name}
-${ucapan()}
-⋮☰ LIST MENU`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', '⋮☰ BACK TO MENU', '.gabut', m)
+    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', '⋮☰ BACK TO MENU', '.gabut', m)
   } catch (e) {
     conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', 'zowner', m)
     throw e
@@ -393,7 +385,6 @@ handler.admin = false
 handler.botAdmin = false
 
 handler.fail = null
-handler.exp = 3
 
 module.exports = handler
 
