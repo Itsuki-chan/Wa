@@ -11,10 +11,9 @@ Uptime : %uptime
 Xp : %exp
 Users : %totalreg
 Role : %role
-Time : %time WITA
+Time : %time
 Date : %date
-Day : %week
-`.trimStart(),
+Day : %week`.trimStart(),
   header: '「 %category 」',
   body: '▷ %cmd %islimit ',
   footer: '\n',
@@ -123,7 +122,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
 
   try {
-    await conn.fakeReply(m.chat, `[❗] *Tunggu menu ${teks} sedang diproses*`, '0@s.whatsapp.net', `${conn.getName(m.sender)} uses ${p}menu`, 'status@broadcast')
+    await conn.fakeReply(m.chat, `[❗] *Tunggu ${teks} menu sedang diproses*`, '0@s.whatsapp.net', `OI ${conn.getName(m.sender)} LO PASTI GAY YA`, 'status@broadcast')
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
@@ -177,9 +176,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `**ITSUKI BOT**\n\nUptime : ${uptime}\nName : ${name}`.trim(),
-          "description": "Prefix : Multi",
-          "buttonText": "Click here >_<",
+          "title": `**ITSUKI BOT**\n\nUptime : ${uptime}\nName : ${name}\n`.trim(),
+          "description": "[Updates]\n\nUpdate menu.js : fix p is not defined\nUpdate quoteislam.js : fix wm is not defined\nUpdate creator.js : Error",
+          "buttonText": "Click here >//<",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
@@ -275,9 +274,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "\n\nList Owner Menu",
                   "rowId": ".? owner"
                 }, {
-                  "title": "Japanese Menu",
-                  "description": "\n\nTranslated Menu",
-                  "rowId": ".japanesemenu"
+                  "title": "Ping",
+                  "description": "\nspeed bot",
+                  "rowId": ",ping"
                 }
               ]
             }
@@ -366,9 +365,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', '⋮☰ BACK TO MENU', '.gabut', { quoted: m })
+    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', '⋮☰ BACK TO MENU', '.gabut', m)
   } catch (e) {
-    conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', 'zowner', { quoted: m })
+    conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', 'zowner', m)
     throw e
   }
 }
