@@ -48,6 +48,10 @@ node .
 * Edit packname in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L31)
 * Edit author in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L32)
 
+# Get Apikeys
+* Get Xteam Apikey at this [section](https://api.xteam.xyz)
+* Get Itsuki Apikey at this [section](https://itsuki-api.herokuapp.com)
+
 # Edit Background in Menu
 Example :
 ![bang](./Screenshot_2021-09-10-20-34-32-90.png)
