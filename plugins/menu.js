@@ -5,17 +5,26 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
-  before: `Lib : Baileys
-Name : %name
-Uptime : %uptime
-Xp : %exp
-Users : %totalreg
-Role : %role
-Time : %time
-Date : %date
-Day : %week`.trimStart(),
-  header: '「 %category 」',
-  body: '▷ %cmd %islimit ',
+  before: `
+[Info Bot]
+🪀 Creator : Itsuki
+📶 Status : Online
+🔖 Lib : Baileys
+📁 Type : NodeJS/JavaScript
+📚 Prefix : Multi
+🖥️ Uptime : %uptime
+🕛 Time : %time
+🗓️ Date : %date
+📟 Day : %week
+👥 Users : %totalreg
+
+[Info User]
+👤 Username : %name
+💸 Limit : %limit
+🧬 Exp : %exp
+🛡️ Role : %role`.trimStart(),
+  header: '📃 Category : %category',
+  body: '▫️ %cmd %islimit ',
   footer: '\n',
   after: `Created by Itsuki`,
 }
@@ -122,7 +131,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
 
   try {
-    await conn.fakeReply(m.chat, `[❗] *Tunggu ${teks} menu sedang diproses*`, '0@s.whatsapp.net', `OI ${conn.getName(m.sender)} LO PASTI GAY YA`, 'status@broadcast')
+    await conn.fakeReply(m.chat, `[❗] *Tunggu ${teks} menu sedang diproses*`, '0@s.whatsapp.net', `OI ${conn.getName(m.sender)} aaaaaaaaaa`, 'status@broadcast')
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
@@ -176,9 +185,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `**ITSUKI BOT**\n\nUptime : ${uptime}\nName : ${name}\n`.trim(),
-          "description": "[Updates]\n\nUpdate menu.js : fix p is not defined\nUpdate quoteislam.js : fix wm is not defined\nUpdate creator.js : Error",
-          "buttonText": "Click here >//<",
+          "title": `**ITSUKI BOT**\n\n🖥️ Uptime : ${uptime}\n👤 Name : ${name}\n\n.`.trim(),
+          "description": "Thanks To :\nariffb\nItsuki",
+          "buttonText": "click here sayang ❤️ :v",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
@@ -365,9 +374,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', '⋮☰ BACK TO MENU', '.gabut', m)
+    await conn.send2ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', m)
   } catch (e) {
-    conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', 'zowner', m)
+    conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', '.owner', m)
     throw e
   }
 }
