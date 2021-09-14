@@ -6,6 +6,7 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
+
 [Info Bot]
 🪀 Creator : Itsuki
 📶 Status : Online
@@ -323,8 +324,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     // ├ ${_p + command} info
     // ├ ${_p + command} tanpa kategori
     // ├ ${_p + command} owner
-    // └────  
-    //     `.trim(), '0@s.whatsapp.net', 'Menu', 'status@broadcast')
+    // └────`.trim(), '0@s.whatsapp.net', 'Menu', 'status@broadcast')
     let groups = {}
     for (let tag in tags) {
       groups[tag] = []
@@ -375,6 +375,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
     await conn.send2ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', m)
+    m.reply('Creator Itsuki Bot: @60199782326 (wa.me/60199782326)')
   } catch (e) {
     conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', '.owner', m)
     throw e
@@ -403,7 +404,7 @@ function clockString(ms) {
   let h = isNaN(ms) ? '--' : Math.floor(ms / 3600000)
   let m = isNaN(ms) ? '--' : Math.floor(ms / 60000) % 60
   let s = isNaN(ms) ? '--' : Math.floor(ms / 1000) % 60
-  return [h, m, s].map(v => v.toString().padStart(2, 0)).join('.')
+  return [h, m, s].map(v => v.toString().padStart(2, 0)).join(':')
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
