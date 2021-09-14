@@ -7,7 +7,7 @@ let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
 
-[Info Bot]
+Info Bot
 🪀 Creator : Itsuki
 📶 Status : Online
 🔖 Lib : Baileys
@@ -19,7 +19,7 @@ const defaultMenu = {
 📟 Day : %week
 👥 Users : %totalreg
 
-[Info User]
+User Info
 👤 Username : %name
 💸 Limit : %limit
 🧬 Exp : %exp
@@ -132,7 +132,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
 
   try {
-    await conn.fakeReply(m.chat, `[❗] *Tunggu ${teks} menu sedang diproses*`, '0@s.whatsapp.net', `OI ${conn.getName(m.sender)} aaaaaaaaaa`, 'status@broadcast')
+    await conn.fakeReply(m.chat, `[❗] *${teks} menu sedang diproses*`, '0@s.whatsapp.net', `${conn.getName(m.sender)} aaaaaaaaaa`, 'status@broadcast')
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
@@ -186,9 +186,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `**ITSUKI BOT**\n\n🖥️ Uptime : ${uptime}\n👤 Name : ${name}\n\n.`.trim(),
+          "title": `*ITSUKI BOT*\n\n🖥️ Uptime : ${uptime}\n👤 Name : ${name}\n\n.`.trim(),
           "description": "Thanks To :\nariffb\nItsuki",
-          "buttonText": "click here sayang ❤️ :v",
+          "buttonText": "```Click Here```",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
@@ -286,7 +286,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                 }, {
                   "title": "Ping",
                   "description": "\nspeed bot",
-                  "rowId": ",ping"
+                  "rowId": ".ping"
                 }
               ]
             }
@@ -374,8 +374,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', m)
-    m.reply('Creator Itsuki Bot: @60199782326 (wa.me/60199782326)')
+    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', 'Donasi', '.donasi', m)
+    conn.reply('Creator Itsuki Bot: @60199782326 :v')
   } catch (e) {
     conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', '.owner', m)
     throw e
