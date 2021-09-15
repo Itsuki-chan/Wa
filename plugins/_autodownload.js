@@ -12,13 +12,13 @@ handler.all = async function (m, { isPrems }) {
     if (db.data.users[m.sender].banned) return
     if (db.data.chats[m.chat].isBanned) return
 
-    if (/^.*tiktok/i.test(m.text)) {
+    if (/^.*tiktok.com/i.test(m.text)) {
         let res = await fetch(API('hardianto', '/api/download/tiktok', { url: m.text.split(/\n| /i)[0] }, 'apikey'))
         if (!res.ok) return m.reply(eror)
         let json = await res.json()
         await m.reply(wait)
         // m.reply(util.format(json))
-        await this.sendFile(m.chat, json.nowm, '', '© stikerin', m)
+        await this.sendFile(m.chat, json.nowm, '', '© ItsukiBot', m)
     }
 
     if (/^.*cocofun/i.test(m.text)) {
@@ -105,5 +105,4 @@ handler.all = async function (m, { isPrems }) {
 
 }
 
-handler.limit = true
 module.exports = handler
