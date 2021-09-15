@@ -16,10 +16,10 @@
 
 <h1 align="center">Termux is not supported</h1>
 
-## Deploy To Heroku
+##   Deploy To Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
-## `.jadibot` in this number
+##   `.jadibot` in this number
 [![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/17624757650)
 
 ## For Rdp/Windows/Vps Users
