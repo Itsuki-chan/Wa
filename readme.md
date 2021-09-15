@@ -14,15 +14,12 @@
 <a href="https://github.com/Itsuki-chan/Wa/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/Itsuki-chan/Wa?label=pull%20request&color=success&style=flat-square"></a>
 <a href="https://github.com/Itsuki-chan/Wa/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/Itsuki-chan/Wa?label=pr%20closed&color=red&style=flat-square"></a>
 
-## This script is doesn't support Termux
+<h1 align="center">Termux is not supported</h1>
 
+## Deploy To Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
-### *Note: repl it doesn't support this source code.*
-> Steno (also known LowDB) need Latest version of Nodejs. Version of nodejs in |Repl It| is v12
-
-
-## You can `.jadibot` in this number
+## `.jadibot` in this number
 [![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/17624757650)
 
 ## For Rdp/Windows/Vps Users
