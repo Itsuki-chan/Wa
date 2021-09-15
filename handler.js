@@ -85,18 +85,18 @@ module.exports = {
           if (!('viewonce' in chat)) chat.viewonce = true
         } else global.db.data.chats[m.chat] = {
           isBanned: false,
-          welcome: false,
+          welcome: true,
           detect: false,
           sWelcome: '',
           sBye: '',
           sPromote: '',
           sDemote: '',
-          descUpdate: true,
+          descUpdate: false,
           stiker: false,
           delete: true,
           antiLink: false,
           expired: 0,
-          antiBadword: true,
+          antiBadword: false,
           viewonce: true,
         }
 
@@ -121,7 +121,7 @@ module.exports = {
           backup: false,
           backupDB: 0,
           groupOnly: false,
-          jadibot: false,
+          jadibot: true,
           nsfw: true,
           status: 0,
         }
@@ -435,10 +435,10 @@ module.exports = {
     let chat = global.db.data.chats[m.key.remoteJid]
     if (chat.delete) return
     await this.sendButton(m.key.remoteJid, `
-Terdeteksi @${m.participant.split`@`[0]} telah menghapus pesan
+Apaan tuh @${m.participant.split`@`[0]} Kok di delete?
 
-ketik *.on delete* untuk mematikan pesan ini
-`.trim(), '', 'Matikan Antidelete', ',on delete', m.message, {
+Bentar gw send apa yg lu delete:v
+`.trim(), '', 'off in antidelete nya kntl', ',disable delete', m.message, {
       contextInfo: {
         mentionedJid: [m.participant]
       }
@@ -458,8 +458,8 @@ ketik *.on delete* untuk mematikan pesan ini
         break
     }
     user.call += 1
-    await this.reply(from, `Jika kamu menelepon lebih dari 5, kamu akan diblokir.\n\n${user.call} / 5`, null)
-    if (user.call == 5) {
+    await this.reply(from, `Please dont call Itsuki for 2 times. Or you will blocked.\n\n${user.call} / 5`, null)
+    if (user.call == 2) {
       await this.blockUser(from, 'add')
       user.call = 0
     }
@@ -468,29 +468,29 @@ ketik *.on delete* untuk mematikan pesan ini
     if (!db.data.chats[jid].descUpdate) return
     if (!desc) return
     let caption = `
-    @${descOwner.split`@`[0]} telah mengubah deskripsi grup.
+    si @${descOwner.split`@`[0]} memgubah description njir
 
     ${desc}
 
-    ketik *.off desc* untuk mematikan pesan ini
+    gw _dikick_ ? gausah masukin itsuki lagi😒
         `.trim()
-    this.sendButton(jid, caption, '', 'Matikan Deskripsi', ',off desc', { contextInfo: { mentionedJid: this.parseMention(caption) } })
+    this.sendButton(jid, caption, '', 'off in lah kntl', ',off desc', { contextInfo: { mentionedJid: this.parseMention(caption) } })
 
   }
 }
 
 global.dfail = (type, m, conn) => {
   let msg = {
-    rowner: 'Perintah ini hanya dapat digunakan oleh _*Pemilik Bot*_',
-    owner: 'Perintah ini hanya dapat digunakan oleh _*Pemilik Bot*_',
-    mods: 'Perintah ini hanya dapat digunakan oleh _*Moderator*_',
-    premium: 'Perintah ini hanya untuk pengguna _*Premium*_',
-    group: 'Perintah ini hanya dapat digunakan di grup',
-    private: 'Perintah ini hanya dapat digunakan di Chat Pribadi',
-    admin: 'Perintah ini hanya untuk *Admin* grup',
-    botAdmin: 'Jadikan bot sebagai *Admin* untuk menggunakan perintah ini',
-    unreg: 'Silahkan daftar untuk menggunakan fitur ini dengan cara mengetik:\n\n*#daftar nama.umur*\n\nContoh: *#daftar Arif.19*',
-    nsfw: 'NSFW tidak aktif'
+    rowner: 'Command ini khusus *Owner-Itsuki*',
+    owner: 'Command ini khusus Owner-bot',
+    mods: 'Command ini khusus Moderator-Itsuki',
+    premium: 'Command ini khusus Premium-only',
+    group: 'Command ini khusus group',
+    private: 'Command ini khusus private chat',
+    admin: 'Command ini khusus Admin-group',
+    botAdmin: 'jadikan gw admin dulu kntl\nbaru bisa pake command ini hadeeeh',
+    unreg: '「 Not Registered 」\n\nPlease daftar dulu\nCommand : .daftar nama.umur\n\nContoh: \n.daftar Itsuki.19',
+    nsfw: 'Not Safe For Work (NSFW) not active'
   }[type]
   if (msg) return m.reply(msg)
 }
