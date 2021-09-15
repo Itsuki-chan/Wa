@@ -8,7 +8,8 @@ const defaultMenu = {
   before: `
 
 Info Bot
-🪀 Creator : Itsuki
+🪀 Creator : ${global.nameowr}
+🎭 Owner Activity : ${global.cactivy}
 📶 Status : Online
 🔖 Lib : Baileys
 📁 Type : NodeJS/JavaScript
@@ -27,7 +28,11 @@ User Info
   header: '📃 Category : %category',
   body: '▫️ %cmd %islimit ',
   footer: '\n',
-  after: `Created by Itsuki`,
+  after: `📋 Thanks To
+Nurutomo (Creator Base)
+Ariffb (Recoder)
+Itsuki (Recoder 2:v)
+`,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
@@ -374,9 +379,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', 'Donasi', '.donasi', m)
+    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', 'Donasi', '.donasi')
   } catch (e) {
-    conn.sendButton(m.chat, 'Maaf, menu sedang error', 'Lah kok bisa error?', 'Chat Owner', '.owner', m)
+    m.reply('Maaf menu error...\nChat Owner : @60199782326')
     throw e
   }
 }
