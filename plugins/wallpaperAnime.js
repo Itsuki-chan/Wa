@@ -5,10 +5,10 @@ let handler = async (m, { conn }) => {
     if (!res.ok) throw eror
     let img = await res.buffer()
     if (!img) throw img
-    conn.sendFile(m.chat, img, '', '© stikerin', m, 0, { thumbnail: await (await fetch(img)).buffer() })
+    conn.sendFile(m.chat, img, '', 'nyaa >//<', m, 0, { thumbnail: await (await fetch(img)).buffer() })
 }
 handler.help = ['wallpaperanime']
-handler.tags = ['internet']
+handler.tags = ['anime']
 handler.command = /^(wallpaper|wp)anime$/i
 handler.limit = true
 
