@@ -24,7 +24,7 @@ Episode : *${episode.toString()}*
   `.trim(), m)
 }
 handler.help = ['wait']
-handler.tags = ['tools']
+handler.tags = ['anime']
 handler.command = /^(wait)$/i
 
 module.exports = handler
