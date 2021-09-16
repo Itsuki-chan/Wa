@@ -206,7 +206,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
           "title": `Ｉｔｓｕｋｉ　Ｂｏｔｚ\n\n${ucapan()} , ${name}`.trim(),
-          "description": "helo",
+          "description": "© Itsuki",
           "buttonText": "```Click Here```",
           "listType": "SINGLE_SELECT",
           "sections": [
