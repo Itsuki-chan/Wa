@@ -19,12 +19,15 @@ Info Bot
 🗓️ Date : %date
 📟 Day : %week
 👥 Users : %totalreg
+🍻 Sc Bot : .sc
 
 User Info
 👤 Username : %name
 💸 Limit : %limit
 🧬 Exp : %exp
-🛡️ Role : %role`.trimStart(),
+🛡️ Role : %role
+
+Fitur-fitur`.trimStart(),
   header: '📃 Category : %category',
   body: '▫️ %cmd %islimit ',
   footer: '\n',
@@ -32,12 +35,15 @@ User Info
 Nurutomo (Creator Base)
 Ariffb (Recoder)
 Itsuki (Recoder 2:v)
+
+ITSUKI-BOTZ@3.3.1
+\`\`\`CREATED BY ITSUKI\`\`\`
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'anime', 'nsfw', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
     'main': 'Main',
@@ -46,6 +52,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'sticker': 'Sticker',
     'kerang': 'Kerang Ajaib',
     'quotes': 'Quotes',
+    'anime': 'Anime',
+    'nsfw': 'NSFW (NOT SAFE FOR WORK)',
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
     'group': 'Grup',
     'premium': 'Premium',
@@ -78,6 +86,12 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   }
   if (teks == 'quotes') tags = {
     'quotes': 'Quotes'
+  }
+  if (teks == 'anime') tags = {
+    'anime': 'Anime'
+  }
+  if (teks == 'nsfw') tags = {
+    'nsfw': 'NSFW'
   }
   if (teks == 'admin') tags = {
     'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`
@@ -225,6 +239,14 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "description": "\nQuotes bang",
                   "rowId": ".? quotes"
                 }, {
+                  "title": "Anime Menu",
+                  "description": "\nSEMUANYA ANIME",
+                  "rowId": ".? anime"
+                }, {
+                  "title": "NSFW menu",
+                  "description": "\nLAH KOK ISO",
+                  "rowId": ".? nsfw"
+                }, {
                   "title": "Admin Menu",
                   "description": "\nAdmin Group Only",
                   "rowId": ".? admin"
@@ -312,6 +334,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     // ├ ${_p + command} stiker
     // ├ ${_p + command} kerang
     // ├ ${_p + command} quotes
+    // ├ ${_p + command} anime
+    // ├ ${_p + command} nsfw
     // ├ ${_p + command} admin
     // ├ ${_p + command} group
     // ├ ${_p + command} premium
@@ -379,7 +403,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'Owner', '.owner', 'Sc Bot', '.sc', 'Donasi', '.donasi')
+    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'OWNER-ITSUKI', '.owner', 'SOURCECODE', '.sc', 'DONASI', '.donasi')
   } catch (e) {
     m.reply('Maaf menu error...\nChat Owner : @60199782326')
     throw e
