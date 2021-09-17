@@ -1,8 +1,5 @@
 function handler(m) {
-  m.reply('bentar')
-  this.fakeReply(m.chat, `Bot ini menggunakan
-sc : https://github.com/Itsuki-chan/Wa
-`, '0@s.whatsapp.net', 'SOURCE CODE BOT', 'status@broadcast')
+  m.reply('Sc? Tanya @60199782326')
 }
 handler.help = ['sc', 'sourcecode', 'src']
 handler.tags = ['info']
