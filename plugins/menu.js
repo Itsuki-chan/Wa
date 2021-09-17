@@ -5,38 +5,34 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
-  before: `
-
-Info Bot
+  before: `Info Bot
 🪀 Creator : ${global.nameowr}
 🎭 Owner Activity : ${global.cactivy}
 📶 Status : Online
 🔖 Lib : Baileys
-📁 Type : NodeJS/JavaScript
+📁 Type : NodeJS
+⚙️ Language : JavaScript
 📚 Prefix : Multi
 🖥️ Uptime : %uptime
 🕛 Time : %time
 🗓️ Date : %date
 📟 Day : %week
 👥 Users : %totalreg
-🍻 Sc Bot : .sc
 
 User Info
 👤 Username : %name
 💸 Limit : %limit
 🧬 Exp : %exp
-🛡️ Role : %role
-
-Fitur-fitur`.trimStart(),
+🛡️ Role : %role`.trimStart(),
   header: '📃 Category : %category',
-  body: '▫️ %cmd %islimit ',
+  body: '▫️ %cmd %islimit %isPrem',
   footer: '\n',
   after: `📋 Thanks To
 Nurutomo (Creator Base)
 Ariffb (Recoder)
 Itsuki (Recoder 2:v)
 
-ITSUKI-BOTZ@3.3.1
+ITSUKI-BOTZ@^1.14
 \`\`\`CREATED BY ITSUKI\`\`\`
 `,
 }
@@ -207,100 +203,100 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
         "listMessage": {
           "title": `Ｉｔｓｕｋｉ　Ｂｏｔｚ\n\n${ucapan()} , ${name}`.trim(),
           "description": "© Itsuki",
-          "buttonText": "```Click Here```",
+          "buttonText": "𝕮𝖑𝖎𝖈𝖐 𝕳𝖊𝖗𝖊 ?? 𝕳𝖒𝖒",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
                   "title": `All Menu`,
-                  "description": "\nLIST ALL MENU",
+                  "description": "LIST ALL MENU",
                   "rowId": ".? all"
                 }, {
                   "title": "Game Menu",
-                  "description": "\nList Game Menu",
+                  "description": "List Game Menu",
                   "rowId": ".? game"
 
                 }, {
                   "title": "Exp Menu",
-                  "description": "\nList XP Menu",
+                  "description": "List XP Menu",
                   "rowId": ".? xp"
 
                 }, {
                   "title": "Sticker Menu",
-                  "description": "\nList Sticker Menu",
+                  "description": "List Sticker Menu",
                   "rowId": ".? sticker"
                 }, {
                   "title": "Kerang Ajaib Menu",
-                  "description": "\nList Kerang Ajaib",
+                  "description": "List Kerang Ajaib",
                   "rowId": ".? kerangajaib"
                 }, {
                   "title": "Quotes Menu",
-                  "description": "\nQuotes bang",
+                  "description": "List Quotes Menu",
                   "rowId": ".? quotes"
                 }, {
                   "title": "Anime Menu",
-                  "description": "\nSEMUANYA ANIME",
+                  "description": "List Anime Menu😌",
                   "rowId": ".? anime"
                 }, {
-                  "title": "NSFW menu",
-                  "description": "\nLAH KOK ISO",
+                  "title": "NSFW Menu",
+                  "description": "LAH KOK ISO",
                   "rowId": ".? nsfw"
                 }, {
                   "title": "Admin Menu",
-                  "description": "\nAdmin Group Only",
+                  "description": "Admin Group Only",
                   "rowId": ".? admin"
                 }, {
                   "title": "Group Menu",
-                  "description": "\nGroup Only",
+                  "description": "Group Only",
                   "rowId": ".? grup"
                 }, {
                   "title": "Internet Menu",
-                  "description": "\nList Internet Menu",
+                  "description": "List Internet Menu",
                   "rowId": ".? internet"
                 }, {
                   "title": "Anonymous Chat Menu",
-                  "description": "\nAnonymous Chat",
+                  "description": "List Anonymous Chat",
                   "rowId": ".? anonymous"
                 }, {
                   "title": "Nulis & Logo Menu",
-                  "description": "\nNulis disini bang:v",
+                  "description": "list nulis",
                   "rowId": ".? nulis"
                 }, {
                   "title": "Downloader Menu",
-                  "description": "\nList Downloader Menu",
+                  "description": "List Downloader Menu",
                   "rowId": ".? downloader"
                 }, {
                   "title": "Tools Menu",
-                  "description": "\nTools Menu",
+                  "description": "Tools Menu",
                   "rowId": ".? tools"
                 }, {
                   "title": "For Fun Menu",
-                  "description": "\nFun Menu",
+                  "description": "Fun Menu",
                   "rowId": ".? fun"
                 }, {
                   "title": "Database Menu",
-                  "description": "\nAlias of storage",
+                  "description": "database?",
                   "rowId": ".? database"
                 }, {
                   "title": "Vote & Absen Menu",
-                  "description": "\nvothing hire",
+                  "description": "vothing hire",
                   "rowId": ".? vote"
                 }, {
                   "title": "Al-Qur\'an Menu",
-                  "description": "\nSentiasa tobat bang:v",
+                  "description": "Sentiasa tobat bang:v",
                   "rowId": ".? quran"
                 }, {
                   "title": "Audio Changer Menu",
-                  "description": "\nChange your audio style:v",
+                  "description": "Change your audio style:v",
                   "rowId": ".? audio"
                 }, {
                   "title": "Baileys Menu",
-                  "description": "\nBiar lo jadibot:v",
+                  "description": "Biar lo jadibot:v",
                   "rowId": ".? jadibot"
                 }, {
                   "title": "Info Menu",
-                  "description": "\nInfo",
+                  "description": "Info",
                   "rowId": ".? info"
                 }, {
                   "title": "No Category Menu",
@@ -308,11 +304,11 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "rowId": ".? tanpakategori"
                 }, {
                   "title": "Owner Menu",
-                  "description": "\nList Owner Menu",
+                  "description": "List Owner Menu",
                   "rowId": ".? owner"
                 }, {
                   "title": "Ping",
-                  "description": "\nspeed bot",
+                  "description": "speed bot",
                   "rowId": ".ping"
                 }
               ]
@@ -351,7 +347,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     // ├ ${_p + command} audio
     // ├ ${_p + command} jadibot
     // ├ ${_p + command} info
-    // ├ ${_p + command} tanpa kategori
+    // ├ ${_p + command} tanpakategori
     // ├ ${_p + command} owner
     // └────`.trim(), '0@s.whatsapp.net', 'Menu', 'status@broadcast')
     let groups = {}
@@ -403,7 +399,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ITSUKIBOT* 」`, text.trim(), 'OWNER-ITSUKI', '.owner', 'SOURCECODE', '.sc', 'DONASI', '.donasi')
+    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ItsukiBotz* 」`, text.trim(), 'OWNER-ITSUKI', ',owner', 'SOURCECODE', ',sc', 'DONASI', ',donasi')
   } catch (e) {
     m.reply('Maaf menu error...\nChat Owner : @60199782326')
     throw e
