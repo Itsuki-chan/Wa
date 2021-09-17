@@ -1,5 +1,5 @@
 ﻿let levelling = require('../lib/levelling')
-let { MessageType } = require('@adiwajshing/baileys')
+let { MessageType, Presence } = require('@adiwajshing/baileys')
 let fs = require('fs')
 let path = require('path')
 let fetch = require('node-fetch')
@@ -8,6 +8,7 @@ const defaultMenu = {
   before: `Info Bot
 🪀 Creator : ${global.nameowr}
 🎭 Owner Activity : ${global.cactivy}
+🔋 Battery : *${conn.battery ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Charging...' : '⚡ Discharging'}` : 'Unknown'}*
 📶 Status : Online
 🔖 Lib : Baileys
 📁 Type : NodeJS
@@ -32,11 +33,12 @@ Nurutomo (Creator Base)
 Ariffb (Recoder)
 Itsuki (Recoder 2:v)
 
-ITSUKI-BOTZ@^1.14
+ITSUKI-BOTZ@^1.1.4
 \`\`\`CREATED BY ITSUKI\`\`\`
 `,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
+  await conn.updatePresence(m.chat, Presence.recording)
   let tags
   let teks = `${args[0]}`.toLowerCase()
   let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'anime', 'nsfw', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
@@ -399,7 +401,10 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send3ButtonLoc(m.chat, await (await fetch(back)).buffer(), `「 *ItsukiBotz* 」`, text.trim(), 'OWNER-ITSUKI', ',owner', 'SOURCECODE', ',sc', 'DONASI', ',donasi')
+    await conn.send2ButtonLoc(m.chat, await (await fetch(back)).buffer(), `*ITSUKI BOTZ*`, text.trim(), 'Ownerbot', ',owner', 'Donasi', ',donasi')
+    conn.updatePresence(m.chat, Presence.composing)
+    conn.updatePresence(m.chat, Presence.available)
+    conn.updatePresence(m.chat, Presence.composing)
   } catch (e) {
     m.reply('Maaf menu error...\nChat Owner : @60199782326')
     throw e
