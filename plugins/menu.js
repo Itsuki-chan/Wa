@@ -18,7 +18,8 @@ const defaultMenu = {
 🕛 Time : %time
 🗓️ Date : %date
 📟 Day : %week
-👥 Users : %totalreg
+
+[ *Total Hit* : %totalreg ]
 
 User Info
 👤 Username : %name
@@ -149,7 +150,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
 
 
   try {
-    await conn.fakeReply(m.chat, `[❗] *${teks} menu sedang diproses*`, '0@s.whatsapp.net', `hello, ${conn.getName(m.sender)}`, 'status@broadcast')
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
