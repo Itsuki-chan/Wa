@@ -29,8 +29,6 @@
 * Install [`Ffmpeg`](https://ffmpeg.org/download.html) (**Don't Forget to Add FFmpeg to the PATH environment variable**)
 * Install [`ImageMagick`](https://imagemagick.org/script/download.php)
 
-### Please delete `itsuki.json` or you can't scan qr
-
 ```cmd
 git clone https://github.com/Itsuki-chan/Wa
 cd Wa
