@@ -19,7 +19,7 @@ const defaultMenu = {
 🗓️ Date : %date
 📟 Day : %week
 
-[ *Total Hit* : %totalreg ]
+*Total Hit* : %totalreg
 
 User Info
 👤 Username : %name
@@ -401,7 +401,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.send2ButtonLoc(m.chat, await (await fetch(back)).buffer(), `*ITSUKI BOTZ*`, text.trim(), 'Ownerbot', ',owner', 'Donasi', ',donasi')
+    await conn.sendButtonLoc(m.chat, await (await fetch(back)).buffer(), `*ITSUKIBOTZ*`, text.trim(), 'Ownerbot', ',owner')
     conn.updatePresence(m.chat, Presence.composing)
     conn.updatePresence(m.chat, Presence.available)
     conn.updatePresence(m.chat, Presence.composing)
