@@ -27,7 +27,7 @@ User Info
 🧬 Exp : %exp
 🛡️ Role : %role`.trimStart(),
   header: '📃 Category : %category',
-  body: '▫️ %cmd %islimit %isPrem',
+  body: '▫️ %cmd %islimit %isPremium',
   footer: '\n',
   after: `📋 Thanks To
 Nurutomo (Creator Base)
