@@ -29,11 +29,7 @@ User Info
   header: '📃 Category : %category',
   body: '▫️ %cmd %islimit %isPremium',
   footer: '\n',
-  after: `📋 Thanks To
-Nurutomo (Creator Base)
-Ariffb (Recoder)
-Itsuki (Recoder 2:v)
-
+  after: `
 ITSUKI-BOTZ@^1.1.4
 \`\`\`CREATED BY ITSUKI\`\`\`
 `,
@@ -203,7 +199,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `Ｉｔｓｕｋｉ　Ｂｏｔｚ\n\n${ucapan()} , ${name}`.trim(),
+          "title": `「 MAIN-MENU 」\nSilahkan pilih dibawah yaa ${name}`.trim(),
           "description": "© Itsuki",
           "buttonText": "𝕮𝖑𝖎𝖈𝖐 𝕳𝖊𝖗𝖊 ?? 𝕳𝖒𝖒",
           "listType": "SINGLE_SELECT",
@@ -410,9 +406,9 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     throw e
   }
 }
-handler.help = ['menu', 'help', '?']
+handler.help = ['menu', 'help']
 handler.tags = ['main']
-handler.command = /^(menu|help|\?|gabut)$/i
+handler.command = /^(lagkoluso|\?|gabut)$/i
 handler.owner = false
 handler.mods = false
 handler.premium = false
