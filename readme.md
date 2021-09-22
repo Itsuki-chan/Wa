@@ -19,7 +19,7 @@
 ##   Deploy To Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
-##   `.jadibot` in this number
+## Want to test?
 [![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/994406631981)
 
 ## For Rdp/Windows/Vps Users
@@ -28,10 +28,6 @@
 * Install [`NodeJS`](https://nodejs.org/en/download)
 * Install [`Ffmpeg`](https://ffmpeg.org/download.html) (**Don't Forget to Add FFmpeg to the PATH environment variable**)
 * Install [`ImageMagick`](https://imagemagick.org/script/download.php)
-
-##### Please delete `itsuki.json`
-or you cant scan qr
-
 ```cmd
 git clone https://github.com/Itsuki-chan/Wa
 cd Wa
