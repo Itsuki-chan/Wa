@@ -5,7 +5,10 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
-  before: `Info Bot
+  before: `
+*ITSUKIBOTZ*
+
+Info Bot
 🪀 Creator : ${global.nameowr}
 🎭 Owner Activity : ${global.cactivy}
 🔋 Battery : *${conn.battery ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Charging...' : '⚡ Discharging'}` : 'Unknown'}*
@@ -397,7 +400,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.sendButtonLoc(m.chat, await (await fetch(back)).buffer(), `*ITSUKIBOTZ*`, text.trim(), 'Ownerbot', ',owner')
+    await conn.sendButtonLoc(m.chat, await (await fetch(back)).buffer(), `root@ItsukiBotz:~# ${_p}menu ${teks}`, text.trim(), 'Ownerbot', ',owner')
     conn.updatePresence(m.chat, Presence.composing)
     conn.updatePresence(m.chat, Presence.available)
     conn.updatePresence(m.chat, Presence.composing)
