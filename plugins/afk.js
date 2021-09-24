@@ -2,12 +2,14 @@ let handler = async (m, { text }) => {
   let user = global.db.data.users[m.sender]
   user.afk = + new Date
   user.afkReason = text
-  m.reply(`
-${conn.getName(m.sender)} sekarang AFK${text ? ': ' + text : ''}
-`)
+  conn.sendButton(m.chat, `
+[ *AWAY FROM KEYBOARD* ]
+
+${conn.getName(m.sender)} IS NOW AFK${text ? ': ' + text : ''}
+`, 'root@ItsukiChan:~#', 'UDH SIAP AFK', '.gabut')
 }
-handler.help = ['afk [alasan]']
-handler.tags = ['main']
+handler.help = ['afk [reason]']
+handler.tags = ['group']
 handler.command = /^afk$/i
 
 module.exports = handler
