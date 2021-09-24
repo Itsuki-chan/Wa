@@ -8,20 +8,18 @@
 <a href="https://github.com/Itsuki-chan/Wa/network/members"><img title="forks" src="https://img.shields.io/github/forks/Itsuki-chan/Wa?label=forks&color=blue&style=flat-square"></a>
 <a href="https://github.com/Itsuki-chan/Wa/watchers"><img title="watchers" src="https://img.shields.io/github/watchers/Itsuki-chan/Wa?label=watchers&color=green&style=flat-square"></a>
 <a href="https://github.com/Itsuki-chan/Wa/stargazers"><img title="Stars" src="https://img.shields.io/github/stars/Itsuki-chan/Wa?label=stars&color=yellow&style=flat-square"></a>
-<a href="https://github.com/Itsuki-chan/Wa/graphs/contributors"><img title="Contributors" src="https://img.shields.io/github/contributors/Itsuki-chan/Wa?label=contributors&color=blue&style=flat-square"></a>
 <a href="https://github.com/Itsuki-chan/Wa/issues"><img title="Issues" src="https://img.shields.io/github/issues/Itsuki-chan/Wa?label=issues&color=success&style=flat-square"></a>
 <a href="https://github.com/Itsuki-chan/Wa/issues?q=is%3Aissue+is%3Aclosed"><img title="Issues" src="https://img.shields.io/github/issues-closed/Itsuki-chan/Wa?label=issue%20closed&color=red&style=flat-square"></a>
 <a href="https://github.com/Itsuki-chan/Wa/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/Itsuki-chan/Wa?label=pull%20request&color=success&style=flat-square"></a>
 <a href="https://github.com/Itsuki-chan/Wa/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/Itsuki-chan/Wa?label=pr%20closed&color=red&style=flat-square"></a>
 
-<h1 align="center">Termux is not supported</h1>
-
-##   Deploy To Heroku
+## Deploy To Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
 ## Want to test?
 [![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/994406631981)
-
+# Install
+_________
 ## For Rdp/Windows/Vps Users
 
 * Install [`Git`](https://git-scm.com/downloads)
@@ -31,6 +29,16 @@
 ```cmd
 git clone https://github.com/Itsuki-chan/Wa
 cd Wa
+npm i
+npm update
+node .
+```
+________
+## Termux ( but sc lain:v )
+```cmd
+apt install git nodejs ffmpeg imagemagick
+git clone https://github.com/ariffb25/stikerinbot --branch termux
+cd stikerinbot
 npm i
 npm update
 node .
