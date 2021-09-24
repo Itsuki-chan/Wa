@@ -6,7 +6,7 @@ let handler = async (m, { text }) => {
 [ *AWAY FROM KEYBOARD* ]
 
 ${conn.getName(m.sender)} IS NOW AFK${text ? ': ' + text : ''}
-`, 'root@ItsukiChan:~#', 'UDH SIAP AFK', '.gabut')
+`, 'root@BOT-CHAN:~# :V', 'UDH SIAP AFK', '.gabut')
 }
 handler.help = ['afk [reason]']
 handler.tags = ['group']
