@@ -6,36 +6,29 @@ let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
   before: `
-*ITSUKIBOTZ*
-
 Info Bot
 🪀 Creator : ${global.nameowr}
-🎭 Owner Activity : ${global.cactivy}
 🔋 Battery : *${conn.battery ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Charging...' : '⚡ Discharging'}` : 'Unknown'}*
 📶 Status : Online
 🔖 Lib : Baileys
 📁 Type : NodeJS
 ⚙️ Language : JavaScript
-📚 Prefix : Multi
 🖥️ Uptime : %uptime
 🕛 Time : %time
 🗓️ Date : %date
 📟 Day : %week
-
 *Total Hit* : %totalreg
 
 User Info
 👤 Username : %name
 💸 Limit : %limit
 🧬 Exp : %exp
-🛡️ Role : %role`.trimStart(),
-  header: '📃 Category : %category',
-  body: '▫️ %cmd %islimit %isPremium',
+🛡️ Role : %role
+`.trimStart(),
+  header: '─「 %category 」─',
+  body: '❏ %cmd %islimit %isPremium',
   footer: '\n',
-  after: `
-ITSUKI-BOTZ@^1.1.4
-\`\`\`CREATED BY ITSUKI\`\`\`
-`,
+  after: `Created with JavaScript`,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
   await conn.updatePresence(m.chat, Presence.recording)
@@ -202,8 +195,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `「 MAIN-MENU 」\nSilahkan pilih dibawah yaa ${name}`.trim(),
-          "description": "© Itsuki",
+          "title": `「 BUTTON-MENU 」`.trim(),
+          "description": "‏‏‎ ‎",
           "buttonText": "𝕮𝖑𝖎𝖈𝖐 𝕳𝖊𝖗𝖊 ?? 𝕳𝖒𝖒",
           "listType": "SINGLE_SELECT",
           "sections": [
