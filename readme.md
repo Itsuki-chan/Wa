@@ -20,8 +20,7 @@
 [![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/994406631981)
 # Install
 _________
-### please delete itsuki.json
-
+### please delete `itsuki.json`
 ## For Rdp/Windows/Vps Users
 
 * Install [`Git`](https://git-scm.com/downloads)
@@ -100,17 +99,9 @@ Example Server `https://json-server.adiixyz.repl.co/`
 
 The server must have specifications like this
 
-#### GET
-
-```http
-GET /
-Accept: application/json
-```
-
 #### POST
 
 ```http
-POST /
 Content-Type: application/json
 
 {
@@ -124,7 +115,7 @@ If small unicode qr doesn't support
 
 ### `--restrict`
 
-Activate restricted plugins (which may cause your number to be **blocked** if used too often)
+Activate restricted plugins (which may cause your number to be **banned** if used too often)
 
 * Group Administration `add, kick, promote, demote`
 
