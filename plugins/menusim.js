@@ -1,7 +1,8 @@
 function handler(m) {
-  this.send2Button(m.chat, `*ITSUKIBOTZ*
+  m.reply('Please wait...')
+  this.send2Button(m.chat, `*Itsuki Bot*
 
-Silahkan pilih ya kak`, 'root@Itsukibotz:~#', 'Button Menu', '.?', 'All Menu', '.? all', m)
+Please select below`, 'root@Itsukibotz:~#', 'Button Menu', '.?', 'All Menu', '.? all', m)
 }
 handler.command = /^(menu|help)$/i
 
