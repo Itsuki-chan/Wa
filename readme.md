@@ -13,6 +13,9 @@
 <a href="https://github.com/Itsuki-chan/Wa/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/Itsuki-chan/Wa?label=pull%20request&color=success&style=flat-square"></a>
 <a href="https://github.com/Itsuki-chan/Wa/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/Itsuki-chan/Wa?label=pr%20closed&color=red&style=flat-square"></a>
 
+## Repository Stats
+[![Wa](https://github-readme-stats.vercel.app/api/pin/?username=Itsuki-chan&repo=Wa&theme=tokyonight)](https://github.com/Itsuki-chan/Wa)
+
 ## Deploy To Heroku
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
