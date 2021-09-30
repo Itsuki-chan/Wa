@@ -1,5 +1,10 @@
 function handler(m) {
-  m.reply('Sc? Tanya @60199782326')
+  m.reply(`Sc Bot
+
+Bot ini menggunakan sc : github.com/Itsuki-chan/Wa
+Jangan lupa kasih star.
+
+@Adiixyz~`)
 }
 handler.help = ['sc', 'sourcecode', 'src']
 handler.tags = ['info']
