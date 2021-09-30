@@ -5,25 +5,16 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
-  before: `
-Info Bot
-🪀 Creator : ${global.nameowr}
-🔋 Battery : *${conn.battery ? `${conn.battery.value}% ${conn.battery.live ? '🔌 Charging...' : '⚡ Discharging'}` : 'Unknown'}*
-📶 Status : Online
-🔖 Lib : Baileys
-📁 Type : NodeJS
-⚙️ Language : JavaScript
-🖥️ Uptime : %uptime
-🕛 Time : %time
-🗓️ Date : %date
-📟 Day : %week
-*Total Hit* : %totalreg
-
-User Info
-👤 Username : %name
-💸 Limit : %limit
-🧬 Exp : %exp
-🛡️ Role : %role
+  before: `Uptime : %uptime
+Time : %time
+Date : %date
+Day : %week
+Total Hit : %totalreg
+Name : %name
+Limit : %limit
+Level : %level
+Exp : %exp
+Role : %role
 `.trimStart(),
   header: '─「 %category 」─',
   body: '❏ %cmd %islimit %isPremium',
@@ -61,7 +52,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'audio': 'Audio Changer',
     'jadibot': 'Jadi Bot',
     'info': 'Info',
-    '': 'Tanpa Kategori',
+    '': 'Created By Itsuki',
   }
   if (teks == 'game') tags = {
     'game': 'Game'
@@ -131,7 +122,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     'info': 'Info'
   }
   if (teks == 'tanpakategori') tags = {
-    '': 'Tanpa Kategori'
+    '': 'Created By Itsuki'
   }
   if (teks == 'owner') tags = {
     'owner': 'Owner',
@@ -145,7 +136,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     let package = JSON.parse(await fs.promises.readFile(path.join(__dirname, '../package.json')).catch(_ => '{}'))
     let { exp, limit, level, role, registered } = global.db.data.users[m.sender]
     let { min, xp, max } = levelling.xpRange(level, global.multiplier)
-    let name = registered ? global.db.data.users[m.sender].name : conn.getName(m.sender)
+    let name = conn.getName(m.sender)
     let d = new Date(new Date + 3600000)
     let locale = 'id'
     // d.getTimeZoneOffset()
@@ -195,8 +186,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `「 BUTTON-MENU 」`.trim(),
-          "description": "‏‏‎ ‎",
+          "title": `「 Menu 」`.trim(),
+          "description": "‏‏‎ ‏‏‎  ‏‏‎ ‏‏‎Created by Itsuki‎‎",
           "buttonText": "𝕮𝖑𝖎𝖈𝖐 𝕳𝖊𝖗𝖊 ?? 𝕳𝖒𝖒",
           "listType": "SINGLE_SELECT",
           "sections": [
@@ -292,10 +283,6 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
                   "title": "Info Menu",
                   "description": "Info",
                   "rowId": ".? info"
-                }, {
-                  "title": "No Category Menu",
-                  "description": "Entahlah",
-                  "rowId": ".? tanpakategori"
                 }, {
                   "title": "Owner Menu",
                   "description": "List Owner Menu",
@@ -393,7 +380,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.sendButtonLoc(m.chat, await (await fetch(back)).buffer(), `root@ItsukiBotz:~# ${_p}menu ${teks}`, text.trim(), 'Ownerbot', ',owner')
+    await conn.sendButtonLoc(m.chat, await (await fetch(back)).buffer(), `*${me}*`, text.trim(), 'Ownerbot', ',owner', m)
     conn.updatePresence(m.chat, Presence.composing)
     conn.updatePresence(m.chat, Presence.available)
     conn.updatePresence(m.chat, Presence.composing)
