@@ -380,7 +380,7 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.sendButtonLoc(m.chat, await (await fetch(back)).buffer(), `*${me}*`, text.trim(), 'Ownerbot', ',owner', m)
+    await conn.sendButtonLoc(m.chat, await (await fetch(back)).buffer(), `itsuki botz`, text.trim(), 'Ownerbot', ',owner', m)
     conn.updatePresence(m.chat, Presence.composing)
     conn.updatePresence(m.chat, Presence.available)
     conn.updatePresence(m.chat, Presence.composing)
