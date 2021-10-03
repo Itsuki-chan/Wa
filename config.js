@@ -33,10 +33,10 @@ global.APIKeys = { // APIKey nya disini
 global.packname = 'Hello'
 global.author = 'Itsuki Chan'
 
-global.wait = '*Tunggu permintaan anda sedang diproses*'
-global.eror = '*Error.*'
+global.wait = 'Let me process this shit'
+global.eror = 'Wtf. Error'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text='
-global.back = 'https://telegra.ph/file/8745c6c2481b126fa027b.jpg'
+global.back = 'https://cdn-106.anonfiles.com/f4Hao5L0u8/1f92f2f2-1633248942/1633248338074.jpg'
 global.cactivy = 'Listening to Music' // Jangan ubah kontol
 global.nameowr = 'Itsuki' // Ubah? Error bukan salah gue:)
 
