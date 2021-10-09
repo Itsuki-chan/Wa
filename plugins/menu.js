@@ -5,129 +5,146 @@ let path = require('path')
 let fetch = require('node-fetch')
 let moment = require('moment-timezone')
 const defaultMenu = {
-  before: `Uptime : %uptime
+  before: `*_ITSUKI • Bot_*
+
+- *I N F O  B O T*
+Base : Ariffb
+Recode : Itsuki
+Bot Name : Itsuki Botz
+Bot Username : %me
+Uptime : %uptime
+Total Hit : %totalreg
+
+- *D A T E  &  T I M E*
 Time : %time
 Date : %date
 Day : %week
-Total Hit : %totalreg
+
+- *I N F O  U S E R*
 Name : %name
 Limit : %limit
 Level : %level
 Exp : %exp
 Role : %role
 `.trimStart(),
-  header: '─「 %category 」─',
-  body: '❏ %cmd %islimit %isPremium',
+  header: '- *%category*',
+  body: '%cmd %isLimit %isPremium',
   footer: '\n',
-  after: `Created with JavaScript`,
+  after: `
+Itsuki-Bot@^1.1.2
+\`\`\`Created by Itsuki\`\`\`
+`,
 }
 let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
-  await conn.updatePresence(m.chat, Presence.recording)
   let tags
   let teks = `${args[0]}`.toLowerCase()
-  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'anime', 'nsfw', 'admin', 'grup', 'premium', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
+  let arrayMenu = ['all', 'game', 'xp', 'sticker', 'kerangajaib', 'quotes', 'anime', 'nsfw', 'admin', 'grup', 'premium', 'music', 'internet', 'anonymous', 'nulis', 'downloader', 'tools', 'fun', 'database', 'quran', 'audio', 'jadibot', 'info', 'tanpakategori', 'owner']
   if (!arrayMenu.includes(teks)) teks = '404'
   if (teks == 'all') tags = {
-    'main': 'Main',
-    'game': 'Game',
-    'xp': 'Exp & Limit',
-    'sticker': 'Sticker',
-    'kerang': 'Kerang Ajaib',
-    'quotes': 'Quotes',
-    'anime': 'Anime',
-    'nsfw': 'NSFW (NOT SAFE FOR WORK)',
-    'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`,
-    'group': 'Grup',
-    'premium': 'Premium',
-    'internet': 'Internet',
-    'anonymous': 'Anonymous Chat',
-    'nulis': 'MagerNulis & Logo',
-    'downloader': 'Downloader',
-    'tools': 'Tools',
-    'fun': 'Fun',
-    'database': 'Database',
-    'vote': 'Voting',
-    'absen': 'Absen',
-    'quran': 'Al Qur\'an',
-    'audio': 'Audio Changer',
-    'jadibot': 'Jadi Bot',
-    'info': 'Info',
+    'main': 'M A I N',
+    'game': 'G A M E',
+    'xp': 'X P / L I M I T',
+    'sticker': 'S T I C K E R',
+    'kerang': 'K E R A N G',
+    'quotes': 'Q U O T E S',
+    'anime': 'A N I M E',
+    'nsfw': 'N S F W',
+    'admin': `A D M I N`,
+    'group': 'G R O U P',
+    'premium': 'P R E M I U M',
+    'music': 'M U S I C'
+    'internet': 'I N T E R N E T',
+    'anonymous': 'A N O N Y M O U S  C H A T',
+    'nulis': 'N U L I S',
+    'downloader': 'D O W N L O A D E R',
+    'tools': 'T O O L S',
+    'fun': 'F U N',
+    'database': 'D A T A B A S E',
+    'vote': 'V O T E',
+    'absen': 'A B S E N',
+    'quran': 'A L  Q U R A N',
+    'audio': 'A U D I O',
+    'jadibot': 'S E S S I O N',
+    'info': 'I N F O',
     '': 'Created By Itsuki',
   }
   if (teks == 'game') tags = {
-    'game': 'Game'
+    'game': 'G A M E'
   }
   if (teks == 'xp') tags = {
-    'xp': 'Exp & Limit'
+    'xp': 'X P / L I M I T'
   }
   if (teks == 'sticker') tags = {
-    'sticker': 'Stiker'
+    'sticker': 'S T I C K E R'
   }
   if (teks == 'kerangajaib') tags = {
-    'kerang': 'Kerang Ajaib'
+    'kerang': 'K E R A N G'
   }
   if (teks == 'quotes') tags = {
-    'quotes': 'Quotes'
+    'quotes': 'Q U O T E S'
   }
   if (teks == 'anime') tags = {
-    'anime': 'Anime'
+    'anime': 'A N I M E'
   }
   if (teks == 'nsfw') tags = {
-    'nsfw': 'NSFW'
+    'nsfw': 'N S F W'
   }
   if (teks == 'admin') tags = {
-    'admin': `Admin ${global.opts['restrict'] ? '' : '(Dinonaktifkan)'}`
+    'admin': `A D M I N`
   }
   if (teks == 'grup') tags = {
-    'group': 'Grup'
+    'group': 'G R O U P'
   }
   if (teks == 'premium') tags = {
-    'premium': 'Premium'
+    'premium': 'P R E M I U M'
+  }
+  if (teks == 'music') tags = {
+    'music': 'M U S I C'
   }
   if (teks == 'internet') tags = {
-    'internet': 'Internet'
+    'internet': 'I N T E R N E T'
   }
   if (teks == 'anonymous') tags = {
-    'anonymous': 'Anonymous Chat'
+    'anonymous': 'A N O N Y M O U S  C H A T'
   }
   if (teks == 'nulis') tags = {
-    'nulis': 'MagerNulis & Logo'
+    'nulis': 'N U L I S'
   }
   if (teks == 'downloader') tags = {
-    'downloader': 'Downloader'
+    'downloader': 'D O W N L O A D E R'
   }
   if (teks == 'tools') tags = {
-    'tools': 'Tools'
+    'tools': 'T O O L S'
   }
   if (teks == 'fun') tags = {
-    'fun': 'Fun'
+    'fun': 'F U N'
   }
   if (teks == 'database') tags = {
-    'database': 'Database'
+    'database': 'D A T A B A S E'
   }
   if (teks == 'vote') tags = {
-    'vote': 'Voting',
-    'absen': 'Absen'
+    'vote': 'V O T E',
+    'absen': 'A B S E N'
   }
   if (teks == 'quran') tags = {
-    'quran': 'Al Qur\'an'
+    'quran': 'A L  Q U R A N'
   }
   if (teks == 'audio') tags = {
-    'audio': 'Pengubah Suara'
+    'audio': 'A U D I O'
   }
   if (teks == 'jadibot') tags = {
-    'jadibot': 'Jadi Bot'
+    'jadibot': 'S E S S I O N'
   }
   if (teks == 'info') tags = {
-    'info': 'Info'
+    'info': 'I N F O'
   }
   if (teks == 'tanpakategori') tags = {
-    '': 'Created By Itsuki'
+    '': 'IDK'
   }
   if (teks == 'owner') tags = {
-    'owner': 'Owner',
-    'host': 'Host',
-    'advanced': 'Eval'
+    'owner': 'O W N E R',
+    'host': 'H O S T',
+    'advanced': 'E V A L'
   }
 
 
@@ -186,111 +203,115 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
     if (teks == '404') {
       return conn.relayWAMessage(conn.prepareMessageFromContent(m.chat, {
         "listMessage": {
-          "title": `「 Menu 」`.trim(),
-          "description": "‏‏‎ ‏‏‎  ‏‏‎ ‏‏‎Created by Itsuki‎‎",
-          "buttonText": "𝕮𝖑𝖎𝖈𝖐 𝕳𝖊𝖗𝖊 ?? 𝕳𝖒𝖒",
+          "title": `*L I S T - M E N U*`.trim(),
+          "description": "‏‏‎Jika button tidak muncul...\nSilahkan ketik .menu all",
+          "buttonText": "𝕮𝖑𝖎𝖈𝖐 𝕳𝖊𝖗𝖊",
           "listType": "SINGLE_SELECT",
           "sections": [
             {
               "rows": [
                 {
-                  "title": `All Menu`,
-                  "description": "LIST ALL MENU",
-                  "rowId": ".? all"
-                }, {
-                  "title": "Game Menu",
-                  "description": "List Game Menu",
+                  "title": "G A M E  M E N U",
+                  "description": "",
                   "rowId": ".? game"
 
                 }, {
-                  "title": "Exp Menu",
-                  "description": "List XP Menu",
+                  "title": "XP / L I M I T  M E N U",
+                  "description": "",
                   "rowId": ".? xp"
 
                 }, {
-                  "title": "Sticker Menu",
-                  "description": "List Sticker Menu",
+                  "title": "S T I C K E R",
+                  "description": "",
                   "rowId": ".? sticker"
                 }, {
-                  "title": "Kerang Ajaib Menu",
-                  "description": "List Kerang Ajaib",
+                  "title": "K E R A N G  M E N U",
+                  "description": "",
                   "rowId": ".? kerangajaib"
                 }, {
-                  "title": "Quotes Menu",
-                  "description": "List Quotes Menu",
+                  "title": "Q U O T E S  M E N U",
+                  "description": "",
                   "rowId": ".? quotes"
                 }, {
-                  "title": "Anime Menu",
-                  "description": "List Anime Menu😌",
+                  "title": "A N I M E  M E N U",
+                  "description": "",
                   "rowId": ".? anime"
                 }, {
-                  "title": "NSFW Menu",
-                  "description": "LAH KOK ISO",
+                  "title": "N S F W  M E N U",
+                  "description": "",
                   "rowId": ".? nsfw"
                 }, {
-                  "title": "Admin Menu",
-                  "description": "Admin Group Only",
+                  "title": "A D M I N  M E N U",
+                  "description": "",
                   "rowId": ".? admin"
                 }, {
-                  "title": "Group Menu",
-                  "description": "Group Only",
+                  "title": "G R O U P  M E N U",
+                  "description": "",
                   "rowId": ".? grup"
                 }, {
-                  "title": "Internet Menu",
-                  "description": "List Internet Menu",
+                  "title": "I N T E R N E T  M E N U",
+                  "description": "",
                   "rowId": ".? internet"
                 }, {
-                  "title": "Anonymous Chat Menu",
-                  "description": "List Anonymous Chat",
+                  "title": "ANONYMOUS CHAT MENU",
+                  "description": "",
                   "rowId": ".? anonymous"
                 }, {
-                  "title": "Nulis & Logo Menu",
-                  "description": "list nulis",
+                  "title": "N U L I S  M E N U",
+                  "description": "",
                   "rowId": ".? nulis"
                 }, {
-                  "title": "Downloader Menu",
-                  "description": "List Downloader Menu",
+                  "title": "D O W N L O A D E R  M E N U",
+                  "description": "",
                   "rowId": ".? downloader"
                 }, {
-                  "title": "Tools Menu",
-                  "description": "Tools Menu",
+                  "title": "T O O L S  M E N U",
+                  "description": "",
                   "rowId": ".? tools"
                 }, {
-                  "title": "For Fun Menu",
-                  "description": "Fun Menu",
+                  "title": "F U N  M E N U",
+                  "description": "",
                   "rowId": ".? fun"
                 }, {
-                  "title": "Database Menu",
-                  "description": "database?",
+                  "title": "D A T A B A S E  M E N U",
+                  "description": "",
                   "rowId": ".? database"
                 }, {
-                  "title": "Vote & Absen Menu",
-                  "description": "vothing hire",
+                  "title": "P R E M I U M",
+                  "description": "",
+                  "rowId": ".? premium"
+                }, {
+                  "title": "M U S I C",
+                  "description": "",
+                  "rowId": ".? music"
+                }, {
+                  "title": "V O T E  &  A B S E N  M E N U",
+                  "description": "",
                   "rowId": ".? vote"
                 }, {
-                  "title": "Al-Qur\'an Menu",
-                  "description": "Sentiasa tobat bang:v",
+                  "title": "A L  Q U R A N  M E N U",
+                  "description": "",
                   "rowId": ".? quran"
                 }, {
-                  "title": "Audio Changer Menu",
-                  "description": "Change your audio style:v",
+                  "title": "A U D I O  M E N U",
+                  "description": "",
                   "rowId": ".? audio"
                 }, {
-                  "title": "Baileys Menu",
-                  "description": "Biar lo jadibot:v",
+                  "title": "S E S S I O N  M E N U",
+                  "description": "",
                   "rowId": ".? jadibot"
                 }, {
-                  "title": "Info Menu",
-                  "description": "Info",
+                  "title": "I N F O  M E N U",
+                  "description": "",
                   "rowId": ".? info"
                 }, {
-                  "title": "Owner Menu",
-                  "description": "List Owner Menu",
+                  "title": "O W N E R  M E N U",
+                  "description": "",
                   "rowId": ".? owner"
                 }, {
-                  "title": "Ping",
-                  "description": "speed bot",
-                  "rowId": ".ping"
+                  "title": "S C  B O T",
+                  "description": "",
+                  "rowId": ".sc"
                 }
               ]
             }
@@ -380,11 +401,8 @@ let handler = async (m, { conn, usedPrefix: _p, args, command }) => {
       readmore: readMore
     }
     text = text.replace(new RegExp(`%(${Object.keys(replace).sort((a, b) => b.length - a.length).join`|`})`, 'g'), (_, name) => '' + replace[name])
-    await conn.sendButtonLoc(m.chat, await (await fetch(back)).buffer(), `itsuki botz`, text.trim(), 'Ownerbot', ',owner', m)
-    conn.updatePresence(m.chat, Presence.composing)
-    conn.updatePresence(m.chat, Presence.available)
-    conn.updatePresence(m.chat, Presence.composing)
-  } catch (e) {
+    await conn.sendButtonLoc(m.chat, await (await fetch(back)).buffer(), text.trim(), 'CREATED BY ITSUKI', 'O W N E R', '.creator')
+   } catch (e) {
     m.reply('Maaf menu error...\nChat Owner : @60199782326')
     throw e
   }
@@ -416,9 +434,9 @@ function clockString(ms) {
 }
 function ucapan() {
   const time = moment.tz('Asia/Jakarta').format('HH')
-  res = "Good morning 🌄"
+  res = "PAGI"
   if (time >= 4) {
-    res = "Good morning 🌄"
+    res = "P"
   }
   if (time >= 12) {
     res = "Good afternoon 🏜️"
