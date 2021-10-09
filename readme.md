@@ -1,7 +1,7 @@
 <p align="center">
-	<img src="https://a.uguu.se/dpedLJXD.jpeg" width="45%" style="margin-left: auto;margin-right: auto;display: block;">
+	<img src="https://a.uguu.se/dpedLJXD.jpeg" width="75%" style="margin-left: auto;margin-right: auto;display: block;">
 </p>
-<h1 align="center">Itsuki Botz</h1>
+<h1 align="center">I T S U K I  B O T Z</h1>
 
 
 
@@ -13,17 +13,17 @@
 <a href="https://github.com/Itsuki-chan/Wa/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/Itsuki-chan/Wa?label=pull%20request&color=success&style=flat-square"></a>
 <a href="https://github.com/Itsuki-chan/Wa/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/Itsuki-chan/Wa?label=pr%20closed&color=red&style=flat-square"></a>
 
-## Repository Stats
+## R E P O  S T A T S
 [![Wa](https://github-readme-stats.vercel.app/api/pin/?username=Itsuki-chan&repo=Wa&theme=tokyonight)](https://github.com/Itsuki-chan/Wa)
 
-## Deploy To Heroku
+## DEPLOY TO HEROKU
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
-## Want to test?
+## WHATSAPP BOT
 [![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/+994406631981)
 # Install
 _________
-### please delete `itsuki.json`
+
 ## For Rdp/Windows/Vps Users
 
 * Install [`Git`](https://git-scm.com/downloads)
