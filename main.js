@@ -43,8 +43,8 @@ global.db = new Low(
 global.DATABASE = global.db // Backwards Compatibility
 
 global.conn = new WAConnection()
-conn.browserDescription = ["Itsuki-Bot", "Firefox", '10.0']
-let authFile = `${opts._[0] || 'itsuki'}.json`
+conn.browserDescription = ["I Am Itsuki Botz", "Safari", '10.0']
+let authFile = `${opts._[0] || 'session'}.json`
 if (fs.existsSync(authFile)) conn.loadAuthInfo(authFile)
 if (opts['trace']) conn.logger.level = 'trace'
 if (opts['debug']) conn.logger.level = 'debug'
