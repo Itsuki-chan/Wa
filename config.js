@@ -1,6 +1,6 @@
 ﻿let fs = require('fs')
 global.owner = ['60199782326'] // Letakan nomor kamu disini
-global.mods = [] // Moderator?
+global.mods = ['60199782326'] // Moderator?
 global.prems = JSON.parse(fs.readFileSync('./src/premium.json')) // Pengguna premium tidak memerlukan limit
 global.APIs = { // API Prefix
   // nama: 'https://website'
@@ -30,17 +30,16 @@ global.APIKeys = { // APIKey nya disini
 }
 
 // Sticker WM
-global.packname = 'Hello'
-global.author = 'Itsuki Chan'
+global.packname = 'I Am'
+global.author = 'Itsuki'
 
-global.wait = 'Let me process this shit'
-global.eror = 'Wtf. Error'
+global.wait = 'Lemme process this shit'
+global.eror = 'Mengerrorr...'
 global.fla = 'https://www6.flamingtext.com/net-fu/proxy_form.cgi?&imageoutput=true&script=sketch-name&doScale=true&scaleWidth=800&scaleHeight=500&fontsize=100&fillTextType=1&fillTextPattern=Warning!&text='
-global.back = 'https://cdn-106.anonfiles.com/f4Hao5L0u8/1f92f2f2-1633248942/1633248338074.jpg'
-global.cactivy = 'Listening to Music' // Jangan ubah kontol
-global.nameowr = 'Itsuki' // Ubah? Error bukan salah gue:)
+global.back = 'https://telegra.ph/file/bbb4878afd20293894b2d.jpg'
+global.picmenu = 'https://telegra.ph/file/274548f8ebc8530664a1a.jpg'
 
-global.multiplier = 20 // Semakin tinggi, semakin sulit naik level
+global.multiplier = 5
 
 let chalk = require('chalk')
 let file = require.resolve(__filename)
