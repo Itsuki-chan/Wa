@@ -1,30 +1,12 @@
-let handler = async (m, { conn, isOwner, text, isAdmin }) => {
-  let who
-  if (m.isGroup) {
-    if (!(isAdmin || isOwner)) {
-      global.dfail('admin', m, conn)
-      throw false
-    }
-    if (isOwner) who = m.mentionedJid[0] ? m.mentionedJid[0] : m.quoted ? m.quoted.sender : text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat
-    else who = m.chat
-  } else {
-    if (!isOwner) {
-      global.dfail('owner', m, conn)
-      throw false
-    }
-    who = text ? text.replace(/[^0-9]/g, '') + '@s.whatsapp.net' : m.chat
-  }
-
-  try {
-    if (who.endsWith('g.us')) global.db.data.chats[who].isBanned = true
-    else global.db.data.users[who].banned = true
-    m.reply(`Berhasil Ban! Bot tidak aktif dichat ${conn.getName(who) == undefined ? 'ini' : conn.getName(who)}.`)
-  } catch (e) {
-    throw `nomor tidak ada didatabase!`
-  }
+let handler = async (m, { conn, participants }) => {
+  // if (participants.map(v=>v.jid).includes(global.conn.user.jid)) {
+    global.db.data.chats[m.chat].isBanned = true
+    m.reply('Bot successful muted in this group')
+  // } else m.reply('There is a host number here...')
 }
-handler.help = ['ban', 'banchat']
-handler.tags = ['owner', 'group']
-handler.command = /^ban(chat)?$/i
+handler.help = ['mute']
+handler.tags = ['owner']
+handler.command = /^mute$/i
+handler.owner = true
 
 module.exports = handler
