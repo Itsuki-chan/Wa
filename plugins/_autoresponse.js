@@ -30,8 +30,8 @@ handler.all = async function (m, { isBlocked }) {
 
     // ketika ada yang invite/kirim link grup di chat pribadi
     if ((m.mtype === 'groupInviteMessage' || m.text.startsWith('https://chat') || m.text.startsWith('Buka tautan ini')) && !m.isBaileys && !m.isGroup) {
-        this.sendButton(m.chat, `Sepertinya kamu menghantar
-grup invite
+        this.sendButton(m.chat, `Sepertinya kamu mengirim
+grup invite link
 
 Silahkan chat owner ( .owner ) atau ketuk button di bawag
 `.trim(), '© Itsuki', 'Pemilik Bot', ',owner', m)
@@ -64,7 +64,7 @@ Silahkan chat owner ( .owner ) atau ketuk button di bawag
     if (new Date() * 1 - setting.status > 1000) {
         let _uptime = process.uptime() * 1000
         let uptime = clockString(_uptime)
-        await this.setStatus(`ITSUKI BOT | UPTIME: ${uptime} | MODE: ${global.opts['self'] ? 'Private' : setting.groupOnly ? 'Only group' : 'Public'}`).catch(_ => _)
+        await this.setStatus(`Itsuki Bot • Uptime: ${uptime} • Created by IAmAdyyzz`).catch(_ => _)
         setting.status = new Date() * 1
     }
 
