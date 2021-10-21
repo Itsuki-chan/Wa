@@ -1,7 +1,5 @@
-<p align="center">
-	<img src="https://a.uguu.se/dpedLJXD.jpeg" width="75%" style="margin-left: auto;margin-right: auto;display: block;">
-</p>
-<h1 align="center">I T S U K I  B O T Z</h1>
+
+<h1 align="center">ITSUKI BOT</h1>
 
 
 
@@ -13,14 +11,12 @@
 <a href="https://github.com/Itsuki-chan/Wa/pulls"><img title="Pull Request" src="https://img.shields.io/github/issues-pr/Itsuki-chan/Wa?label=pull%20request&color=success&style=flat-square"></a>
 <a href="https://github.com/Itsuki-chan/Wa/pulls?q=is%3Apr+is%3Aclosed"><img title="Pull Request" src="https://img.shields.io/github/issues-pr-closed/Itsuki-chan/Wa?label=pr%20closed&color=red&style=flat-square"></a>
 
-## R E P O  S T A T S
-[![Wa](https://github-readme-stats.vercel.app/api/pin/?username=Itsuki-chan&repo=Wa&theme=tokyonight)](https://github.com/Itsuki-chan/Wa)
-
 ## DEPLOY TO HEROKU
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
 ## WHATSAPP BOT
 [![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/+994406631981)
+
 # Install
 _________
 
@@ -37,16 +33,6 @@ npm i
 npm update
 node .
 ```
-________
-## Termux ( but sc lain:v )
-```cmd
-apt install git nodejs ffmpeg imagemagick
-git clone https://github.com/ariffb25/stikerinbot --branch termux
-cd stikerinbot
-npm i
-npm update
-node .
-```
 
 # if you want edit
 * Edit owner in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L2)
@@ -56,15 +42,7 @@ node .
 
 # Get Apikeys
 * Get Xteam Apikey at this [section](https://api.xteam.xyz)
-* Get Itsuki Apikey at this [section](https://itsuki-api.herokuapp.com)
-
-# Edit Background in Menu
-Example :
-![bang](./Screenshot_2021-09-10-20-34-32-90.png)
-
-* You can edit in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L37)
-
----------
+----
 
 ## For Heroku Users
 
