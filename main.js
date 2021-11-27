@@ -55,6 +55,7 @@ if (!opts['test']) setInterval(async () => {
 if (opts['server']) require('./server')(global.conn, PORT)
 
 conn.connectOptions.maxQueryResponseTime = 60_000
+conn.version = [2, 2143, 3]
 
 if (opts['test']) {
   conn.user = {
