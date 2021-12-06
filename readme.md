@@ -1,3 +1,5 @@
+# NOTE!!!
+THIS IS WILL NOT MAINTENED BY THE OWNER
 
 <h1 align="center">ITSUKI BOT</h1>
 
