@@ -1,7 +1,7 @@
 {
-  "name": "ITSUKI-BOT",
+  "name": "Saani bott",
   "version": "1.1.2",
-  "description": "I AM ITSUKI",
+  "description": "I AM Nisa",
   "main": "itsuki.js",
   "scripts": {
     "start": "node itsuki.js",
