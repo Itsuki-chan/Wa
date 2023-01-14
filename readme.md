@@ -30,7 +30,7 @@ _________
 * Install [`Ffmpeg`](https://ffmpeg.org/download.html) (**Don't Forget to Add FFmpeg to the PATH environment variable**)
 * Install [`ImageMagick`](https://imagemagick.org/script/download.php)
 ```cmd
-git clone https://github.com/Ccyynisa/Wa
+git clone https://github.com/Itsuki-chan/Wa
 cd Wa
 npm i
 npm update
