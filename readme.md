@@ -18,7 +18,7 @@ SO PULL REQS/ISSUES WILL BE IGNORED
 [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/Itsuki-chan/Wa)
 
 ## WHATSAPP BOT
-[![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/+994406631981)
+[![WhatsApp](https://img.shields.io/badge/WhatsApp%20Bot-25D366?style=for-the-badge&logo=whatsapp&logoColor=white)](https://wa.me/+6283169900452)
 
 # Install
 _________
@@ -30,7 +30,7 @@ _________
 * Install [`Ffmpeg`](https://ffmpeg.org/download.html) (**Don't Forget to Add FFmpeg to the PATH environment variable**)
 * Install [`ImageMagick`](https://imagemagick.org/script/download.php)
 ```cmd
-git clone https://github.com/Itsuki-chan/Wa
+git clone https://github.com/Ccyynisa/Wa
 cd Wa
 npm i
 npm update
@@ -41,7 +41,7 @@ node .
 * Edit owner in this  [section](https://github.com/Ccyynisa/Wa/blob/38638d6e269d105bce96f521ee9b6bfe8927953b/config.js)
 * Edit apikey in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L19)
 * Edit packname in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L31)
-* Edit author in this [section](https://github.com/Itsuki-chan/Wa/blob/aac6518cf05fad0e9ff5497933a5481e6ed53f7b/config.js#L32)
+* Edit author in this [section](https://github.com/Ccyynisa/Wa/blob/38638d6e269d105bce96f521ee9b6bfe8927953b/config.js#L32L32)
 
 # Get Apikeys
 * Get Xteam Apikey at this [section](https://api.xteam.xyz)
